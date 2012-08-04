@@ -1,0 +1,40 @@
+ReadPort
+========
+
+Timeline
+--------
+
+Last edit date is 23 Jun 1998.
+
+Description
+-----------
+
+ReadPort is a utility for studying the IBM PC port system. It allows one to
+navigate through the port array and graphically monitor the ports as they change
+value in response to system events.
+
+The application is surprisingly sophisticated and polished given its purpose. It
+even features a 'scanning' mode that looks at each port and determines its
+nature (spontaneously variable, fixed value, probably disconnected etc.), as
+well as a 'tape recorder' mode. The latter is not mentioned in the help screen;
+to access it press 'R' and then you can control the recording using the
+following keys:
+
++ - start recording
+Space - stop recording
+Enter - play
+< - rewind
+> - fast forward
+R - back to normal mode
+
+There is also a 'safe' mode that allows for higher precision measurements. To
+access this press shift+S and then follow the on-screen instructions.
+
+Technical notes
+---------------
+
+As usual, the code is pretty bad. Ridiculous use of subroutines, multiple
+violations of the DRY principle, etc. More unfortunate is the fact that, for all
+that outer polish, ReadPort did not really turn out to be as useful as I had
+hoped. Doing a serious study of the port system requires that you know quite a
+bit more about its structure and implementation than I did at the time.
