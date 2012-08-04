@@ -1,0 +1,33 @@
+Minesweeper
+===========
+
+Timeline
+--------
+
+Original date is unknown, but at least the year 2000, near or after the time
+LuptTrek was made.
+
+Description
+-----------
+
+A Minesweeper clone I made in an afternoon when I was bored. Note that I
+remember making this long after I had left QBasic behind - it was made more as
+a self-dare, to see whether I could quickly implement this classic in a language
+I had fond memories of. As a result, the game is as bare-bones as it can get -
+it won't even react if you step on a mine!
+
+Note the crazy controls: 6,7,8,9 and 0 for left, right, down, up and 'click'
+respectively. Long, hard years of playing ZX Spectrum games without an actual
+Sinclair joystick have made me one of the few people on the planet to whom those
+controls come naturally. 
+
+Technical notes
+---------------
+
+The code is somewhat sloppy, but clearly one class above everything else I had
+done in QBasic up to that point. It could have been even cleaner had I cared.
+
+Note the use of "J = STICK(1)". I'm not sure whether this generalizes to other
+systems, but on my PC, this caused a predictable delay of around 100ms or so
+(probably due to scanning for a non-existent joystick), so I used it for slowing
+down the main game loop enough for the cursor to blink visibly.
