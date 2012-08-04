@@ -1,0 +1,32 @@
+FixMode
+=======
+
+Timeline
+--------
+
+Original date has been lost; Probably closer to 2000 than to 1997.
+
+Description
+-----------
+
+A simple logic puzzle. You get a grid of squares, each of which can be in one
+of three states: red, yellow or green. 'Clicking' on a square will cause it to
+change state, as well as trigger two other squares, not necessarily distinct.
+Your goal is to turn all squares green.
+
+The reason why this is called 'FixMode' is that this was supposed to be a mockup
+for a minigame in a much larger game I had planned, 'SuperMeow in Space'. The
+action would have taken place on a spaceship, and in between mowing down waves
+of baddies, you would have had to occasionally poke around with a high-tech
+screwdriver in panels to get some doors open. Most of these puzzle sequences
+would have consisted of this very problem, though hidden behind much better
+graphics. In the end, the larger project was abandoned, but this puzzle did get
+to be incorporated in the bomb defusing sequence in Arachno Joe II, a ZX
+Spectrum game I made for a competition.
+
+Technical notes
+---------------
+
+Pretty decent effort for what was to be a throwaway program. Note that I was
+careful enough to ensure that you are always given puzzles that allow for a
+solution.

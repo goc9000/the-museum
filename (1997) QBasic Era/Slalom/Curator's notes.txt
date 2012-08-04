@@ -1,0 +1,20 @@
+Slalom
+======
+
+Timeline
+--------
+
+Last edit date is 15 May 1997.
+
+Description
+-----------
+
+A very simple game, just steer the guy between the flags while avoiding the
+incoming trees. Use the [ ] keys to steer, { } to steer harder, and Q to jump.
+It doesn't seem to me like the jump can actually get you past a tree; I probably
+intended to add some jumpable hazards like logs or puddles later.
+
+Technical notes
+---------------
+
+I think this was one of my first games that featured blitting using GET and PUT.

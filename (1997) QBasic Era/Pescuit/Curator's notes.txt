@@ -1,0 +1,24 @@
+Pescuit
+=======
+('Fishing')
+
+Timeline
+--------
+
+Last edit date is 28 Jan 2000.
+
+Description
+-----------
+
+This is a type-in from a magazine, featuring some heavy modifications from me
+with respect to the user interaction bits.  The original type-in had a
+terminal-like interface, and I decided to jazz it up a bit by providing a
+constantly updated status display, single keypress commands and so on.
+
+As for the game itself, it's supposed to be a fishing simulator and it's boring
+as hell. I kept it mostly for historical reasons.
+
+Technical notes
+---------------
+
+Note the use of the J=STICK(1) trick.
