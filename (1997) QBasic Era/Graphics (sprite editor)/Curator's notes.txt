@@ -1,0 +1,139 @@
+Graphics
+========
+
+Timeline
+--------
+
+Last edit date is 22 Aug 1999.
+
+Description
+-----------
+
+"Graphics" is my home-brewed sprite editor. Now whereas Readport was flashy but
+useless, Graphics is the other way round: ugly as hell but immensely successful.
+I used it intensely for making the graphics for my Pascal games right up until
+it was superseded by SprEdit.
+
+Graphics can edit sprites up to 24x24 pixels in size and makes use of a custom
+128-color palette that featured in most of my games. It supports background
+transparency, clipboard operations, and a variety of artistic effects.
+
+Graphics was so successful that I even gave one of my friends, Stefan, a copy.
+It is he to whom the notes at the beginning of the program are addressed.
+
+Note: I have also included the MAKEPAL.BAS program that generates the 128-color
+palette used by Graphics and my games.
+
+Usage
+-----
+
+Some notes about the usage of Graphics are necessary, as I never bothered to
+write a help file or even add comments in the code.
+
+Aside from the main display (which shows the current sprite under high
+magnification), the right side of the screen shows the following, from top to
+bottom:
+
+- The command/tile preview area. This is where all the load/save prompts
+  appear, as well as the tile preview display (see below for details)
+- Four screens showing sprite data at normal magnification. From top to bottom
+  and left to right, these contain:
+  
+  - The current sprite
+  - The data in the clipboard
+  - The main and secondary fill colors
+  - The undo buffer
+
+- Finally, we have the palette display. The currently selected color is marked
+  by a flashing border.
+
+All editing is done via keyboard. A list of all commands follows:
+
+Basic Drawing
+.............
+q : Move up
+a : Move down
+o : Move left
+p : Move right
+0..7 : Select hue
++/- : Select brightness
+j : Set main fill color to current color
+k : Set secondary fill color to current color
+Space : Plot pixel in current color
+Enter : Eyedropper tool (select the color under the cursor)
+
+Color Effects
+.............
+d : Darken whole image
+b : Brighten whole image
+G : Hue shift forward
+g : Hue shift backward
+) : Remove everything from the image BUT the current color
+I : Exchange main fill color with secondary fill color in the image
+i : Replace secondary fill color with main fill color in the image
+M : Same, but ignores brightness (all colors that match hue are transformed)
+f : Fill entire image with main fill color
+
+Geometric Primitives
+....................
+w : Set geometric primitive origin
+L : Draw line from origin to cursor
+@ : Increase brightness along line
+# : Decrease brightness along line
+r : Draw rectangle from origin to cursor
+R : Draw filled rectangle from origin to cursor
+Backspace : Draw filled rectangle in background (transparent) color
+O : Draw circle between origin and cursor
+
+Geometric Effects
+.................
+h : Flips image horizontally
+v : Flips image vertically
+> : Rotates image by 90 degress clockwise
+Z : Skews image.left
+_ : Miniature (halves the image size)
+
+Artistic Effects
+................
+! : Fills background with static in current color
+W : "Wet paint" effect ('melts' the image)
+e : Adds "edge" around the sprite in the current color
+E : Remove current color from the edges of the sprite
+` : Airbrushes some dots on the image, in the current color 
+~ : Lower strength variant of the above
+
+Clipboard operations
+....................
+C : Copy (from geo primitive origin to cursor)
+X : Cut
+V : Paste (at cursor)
+$ : Paste behind the current image (at 0,0, taking transparency into account)
+\ : Paste before the currend image (at 0,0, taking transparency into account)
+
+File operations
+...............
+N : Clears current data and starts a new editing session
+l : Load sprite
+s : Save sprite (prompts for name)
+* : Save current sprite
+F : List files in directory
+
+Animation
+.........
+A : Animate endlessly (prompts for loading of 4 frames)
+H : Same, but stops after last frame (good for explosion animations)
+
+Miscellaneous
+.............
+% : Activates "tiling mode" (shows a preview of the tiled image, so that
+    any seams can be detected)
+m : Save image in undo buffer
+U : Restore image from undo buffer
+ESC : Quit application
+
+Technical notes
+---------------
+
+The less said about the quality of the code, the better. It is an jury-rigged
+mess. If you look closely, you can even find some bugs. Either I didn't fully
+consider all the possible code paths, or I just didn't care.
