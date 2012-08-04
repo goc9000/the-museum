@@ -1,0 +1,20 @@
+LuptTrek
+========
+
+Timeline
+--------
+
+As the title screen states, 10 Jun 2000.
+
+Description
+-----------
+
+A Trek-themed 2D dogfight game. Pretty rubbish.
+
+Technical notes
+---------------
+
+Note that my programming skills had improved significantly by now. There is a
+decent attempt at modularization, and the advanced subroutine facilities of
+QBasic are beginning to be employed.
+
