@@ -1,0 +1,52 @@
+Letter Eater
+============
+
+Timeline
+--------
+
+Original date has been lost; probably somewhere between 1997 and 2000.
+
+Description
+-----------
+
+This is an implementation of a very old and well-known game idea. My inspiration
+at the time came from the 'Run Away' minigame in a typing tutorial program
+called WinType.
+
+You're being chased by a baddie and the only way to move is to correctly type
+the letters that appear randomly on the playing field, causing you to teleport
+to their location (hopefully away from the baddie) and consume them. You also
+get bonus points for consuming 'fresher' letters that have been on the playing
+field for a shorter period of time.
+
+I distincly remember that I made this for the ladies at my mother's office. She
+told me that they would love to see a game made by me, and this is what I came
+up with. This is also why it features a rather detailed help screen and a
+somewhat more user-friendly interface than usual.
+
+Technical notes
+---------------
+
+The programming is, of course, awful. A key feature of my coding 'skills' at the
+time was my ignorance of proper subroutine support. Much like one would do in
+ZX Spectrum BASIC (whose influence I had not yet escaped), I used GOSUBs and
+resorted to various bizarre tricks for passing parameters (global variables,
+packing multiple values in strings etc.).
+
+Note the use of direct writes to the speaker port for the generation of sound
+effects.
+
+Emulation notes
+---------------
+
+You need to set DOSBox to "fixed cycles" mode (around 20K cycles should suffice)
+before running the program. This is particularly important for Letter Eater
+because the program does a rough system speed check at the beginning in order
+to calibrate delays in the sound effects routines.
+
+You also need to edit the path$ variable at the beginning of the file, so that
+it points to the directory where you have your LETT_EAT.CFG file. The ending
+slash is required. Note that the program can't generate another one if you
+delete it.
+
+
