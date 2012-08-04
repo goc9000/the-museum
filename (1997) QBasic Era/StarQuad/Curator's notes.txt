@@ -1,0 +1,27 @@
+StarQuad
+========
+
+Timeline
+--------
+
+Last edit date is 17 Jul 1997.
+
+Description
+-----------
+
+A quirky space-themed shoot'em-up. You have to kill all enemies while avoiding
+the torpedoes they throw at you. You can use Q/A (up/down) and Y/U (left/right)
+to move, Space to fire your lasers, T to fire a torpedo, and Z/X to drop
+attractor or repeller probes. If you get too damaged, systems will start to
+fail, so you have to get away from the enemies so that a base will appear and
+fix you up.
+
+Some inspiration seems to have been drawn from Star Raiders II and the Star
+Trek game on the Atari 2600 (or a clone thereof).
+
+Technical notes
+---------------
+
+The code is horrible. Note, though, that I took the trouble of writing a routine
+for drawing a small font using vector graphics for use in the help screen. Talk
+about focusing on the wrong thing!
