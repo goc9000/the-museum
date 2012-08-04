@@ -1,0 +1,52 @@
+Paian
+=====
+(from "Paianjeni si piramide", "Spiders and Pyramids")
+
+Timeline
+--------
+
+Last edit date is 22 Jun 1997.
+
+Description
+-----------
+
+A Space Invaders kind of game that is actually a fond homage to a ZX Spectrum
+BASIC type-in from my very first "learn to program" book.
+
+The type-in was called "Paianjeni si piramide" (Spiders and Pyramids) and the
+book, whose title I don't recall, was by some guy called Ion Diamandi. I suspect
+it was nicked from somewhere, as was the norm at the time in Romania.
+Regardless, I have very fond and vivid memories of typing it and running it for
+the first time. It was in those days that I first discovered the immense joy of
+programming and bringing my ideas to animated, colourful life on the screen.
+
+The type-in had a fairly simple premise: when you ran it, it drew a desert-like
+landscape featuring three pyramids which were then gradually "eaten" by arachnid
+aliens dropping from above, one at a time. Further variants of the type-in
+allowed you to control a laser with which you could swat the aliens out of the
+sky and protect the pyramids.
+
+"Paian" is built around the same idea, except the laser is now mounted on a
+player-controllable ship, aliens drop in batches and at different speeds, and
+there is also a UFO hovering around. There are multiple levels, each featuring
+faster aliens. You move the ship left and right using 4 and 6 (think keypad)
+and fire using the 8 key.
+
+It's really amazing how many details pay homage to elements in the original
+type-in. The alien sprite is the same, the pyramids are drawn in the same way,
+even the graphic for the desert floor is the same color as the original.
+
+Technical notes
+---------------
+
+The programming is rubbish, as would be expected from a 12-year old.
+
+Note how the program has to draw all of the sprites on screen in its init phase
+so that I can store in memory with GET for latter PUTting. I'm not sure if there
+is a way to load them directly to memory, but I certainly didn't know of it
+back then.
+
+Emulation notes
+---------------
+
+Make sure you give the program enough cycles in DosBOX, or the sound may suffer.
