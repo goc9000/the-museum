@@ -1,0 +1,25 @@
+Miscellaneous
+=============
+
+Description
+-----------
+
+Various utilities of no particular importance.
+
+COLOR.BAS (15 Feb 1998)
+    A color picker program, helped me decide which colors to use from the MCGA
+    standard 256-color palette.
+
+DEMOVIZ.BAS (original date lost)
+    Draws random visualisations under 4-way symmetry.
+
+GATCODER.BAS (05 Jan 1998)
+    Simple translation encoder. The code used features only the letters G,A,T,C
+    (the DNA building blocks, get it?) in various colors.
+
+GENLABIR.BAS (original date lost)
+    Generates a maze by depth-first recursion.
+
+LABIRINT.BAS (13 Jul 1997)
+    Generates a pseudo-maze (i.e. solvability not guaranteed) by filling the
+    screen with random slashes.
