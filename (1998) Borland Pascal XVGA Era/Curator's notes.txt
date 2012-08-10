@@ -1,0 +1,46 @@
+General Notes About the Borland Pascal XVGA Era
+===============================================
+
+As I started to become more familiar with Borland Pascal and move away from
+QBasic, it was only natural that I would eagerly want to start writing games in
+this new, much more powerful environment. Indeed, most of my programs made
+during this time are games, save for the occasional utility such as the sprite
+editor SprEdit (though this is also an effort related to the games).
+
+A characteristic that distinguishes programs of this era from the BP BGI Era is
+the use of assembly language routines for graphics, sound and other operations,
+as opposed to using the standard, but slow and limited, facilities provided by
+Borland Pascal. Often, the video mode used is 320x200x256 colors, as that was
+the easiest to program for and often sufficient for my purposes.
+
+As is typical for younger programmers, my ambitions greatly exceeded my
+programming abilities and my understanding of the machine. I could code the
+core mechanisms of a game or utility, but was not capable of writing graphics,
+sound, keyboard and mouse routines from scratch. Fortunately, I had plenty of
+help in the form of numerous freeware libraries, as well as the nice tutorials
+in the PCGPE (PC Games Programmer's Encyclopedia). Thus, I take no credit for
+most of the low-level code involving graphics, sound, keboard and mouse support,
+though I did occasionally tweak it whenever I had a glimmer of understanding
+as to what it was doing.
+
+One other important note concerns the sound effects used in some of my games.
+I have always strived for as much originality as possible in my games, and I
+think I have often achieved this better than is typical for programmers of my
+age. All of the graphics were always drawn painstakingly by me. Though the
+fundamental game idea often drew inspiration from classics (Invaders, Star Trek
+games etc.), the actual game mechanics were also entirely my creation. Some
+games even feature music, also composed by me (which is obvious given how bad
+it is). However, sound effects was where I drew the line. Creating original
+sound effects is a task that is far beyond most adults, let alone a 13-year old.
+As a result, my only option was to 'borrow' sounds from various other games
+popular at that time. This in itself was not much of a problem, as the games
+were really only intended for my personal use anyway, and I would have never
+thought of publishing them as they were definitely not commercial quality stuff.
+Things may be different now, however, given that, in making my 'museum' public,
+I am publishing this problematic content as well. I suppose I might have to take
+them down if there are objections, but I would hope that any such objector would
+first consider the broader context of things and realize that I'm doing this for
+the historical aspect alone. I could have replaced the sounds with free variants
+post facto, but I want the games to appear exactly as I would have seen and
+heard them at that time.
+

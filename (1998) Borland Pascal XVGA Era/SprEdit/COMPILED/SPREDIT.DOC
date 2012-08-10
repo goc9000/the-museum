@@ -1,0 +1,406 @@
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³                 SPREDIT V1.00 (C) 1998 Dinu Cristian Mircea                ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ÚÄ D'ale legii ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³ ş Acest program este FREEWARE. Sunteti incurajat sa-l distribuiti oriunde, ³
+³   dar GRATIS. Daca tocmai ati CUMPARAT acest program pentru o suma de bani ³
+³   atunci "ati luat teapa" !                                                ³
+³ ş Programul trebuie distribuit INTEGRAL, fara nici un fisier lipsa sau mo- ³
+³   dificat ! Nu va apucati sa umblati prin el, caci cine face asa ceva este ³
+³   un porc nesimtit si [CENZURAT], sau mai precis, un "lamer".              ³
+³ ş Nu imi asum nici o responsabilitate asupra efectelor pozitive sa negati- ³
+³   ve care le va produce acest program ! Folositi-l pe propriul dvs. risc ! ³
+³ ş Nu modificati documentatia sau fisierele sub nici o forma !              ³
+³ ş Trademark-urile companiilor mentionate in aceasta documentatie sunt uti- ³
+³   lizate doar pentru identificare si sunt proprietatea companiilor respec- ³
+³   tive.                                                                    ³
+³ ş Tot ce-i mai sus e valabil si pentru chestiile ipotetic subintelese.     ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ÚÄ Ce va trebuie ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³ ş Computer   : PC sau compatibil.                                          ³
+³ ş Procesor   : Programul a fost construit pe un 586(133Mhz), cred ca merge ³
+³                acceptabil si pe ceva mai lent.                             ³
+³ ş Plc. video : VGA (desi azi toata lumea are sVGA).                        ³
+³ ş Periferale : NUMAI mouse.                                                ³
+³ ş Memorie RAM: Numai vreo 128K !                                           ³
+³ ş Spatiu disc: Cam tot atata.                                              ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ÚÄ Ce este/face ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³  SPRedit este un mic editor de sprite-uri pe care l-am scris initial numai ³
+³ pentru mine, dar pana la urma a iesit asa de bine, incat m-am hotarat sa-i ³
+³ dau drumu' la apa, sa vedem cum pluteste in domeniul public. Cu totii sper ³
+³ ca stiti ce este un sprite ("spiridus"). Daca nu stiti, ee, atunci asta e. ³
+³ Da' vedeti ca nu ma refer la fantasma aia medievala, ci la imaginile folo- ³
+³ site (de obicei in jocuri) pentru animatii si alte chestii. Buuuun...      ³
+³  Formatul de imagini cu care lucreaza acest program este EXTREM de simplu. ³
+³ Fisierele .SPR sunt ceea ce numesc eu un RAW adevarat: n-au nici un singur ³
+³ bit de header, tot fisierul fiind compus numai din datele imaginii. Un fi- ³
+³ sier cu lungimea de 256 bytes, de exemplu, este un sprite 16x16. Unul din- ³
+³ tre dezavantajele acestui format este ca sprite-ul trebuie sa aiba marimi- ³
+³ le X&Y egale (deci nu poti avea 32x16, 8x14, etc.) SPRedit stie sa lucreze ³
+³ numai cu sprite-uri 8x8, 16x16, 24x24 si 32x32. Un alt dezavantaj ar fi ca ³
+³ sprite-urile create cu acest editor folosesc (ca si editorul, de altfel) o ³
+³ paleta formata din 8 culori, fiecare cu 32 de nuante, deci in total, exact ³
+³ 256 de culori. Totusi, aceasta paleta s-ar putea sa nu fie potrivita nevo- ³
+³ ilor dvs. O solutie ar fi sa inlocuiti (numai la copia dvs. !) fisierul cu ³
+³ paleta PAL256.ACT cu alta paleta. Ori construiti un alt .ACT cu Adobe Pho- ³
+³ toshop (TM, etc), ori va faceti unul "manual": paleta .ACT nu este formata ³
+³ din altceva decat 256 triade RGB, fiecare culoare fiind definita printr-un ³
+³ octet R, unul G si unul B (Raza acestora in fisier trebuie sa fie 0..255,  ³
+³ dar hardware-ul accepta numai 0..63, asa ca doua culori care difera prin o ³
+³ valoare R, G, sau B una de alta mai mica decat 4 nu vor fi distinse deloc) ³
+³ Desigur ca in acest fel, mai mult ca sigur ca veti aiuri culorile editoru- ³
+³ lui, stricand frumusetea interfetei. Si sa nu va mirati daca operatiile cu ³
+³ culorile nu dau rezultatul asteptat. Intreg editorul este cladit pe aceas- ³
+³ ta paleta originala ! Revenind la discutia initiala, cred ca deja se naste ³
+³ urmatoarea intrebare in mintea dvs.: "Bine, insa cum FOLOSESC sprite-urile ³
+³ in programele mele ?". Eee, aici mi-e teama ca nu va pot ajuta prea mult ! ³
+³ Exista multe metode de a incarca/memora/afisa un sprite, iar metodele mele ³
+³ nu cred ca sunt chiar cele mai optimizate. Totusi, am cateva sfaturi:      ³
+³                                                                            ³
+³ 1. Programati (cel putin partial) in ASM                                   ³
+³ 2. Faceti rost de Pc Games Programmers Encyclopedia                        ³
+³ 3. NEAPARAT grupati sprite-urile intr-un singur fisier !!!! Aflati ce este ³
+³    "cluster waste" si ma veti intelege ...                                 ³
+³                                                                            ³
+³ Avantaje fata de alte programe:                                            ³
+³                                                                            ³
+³ ş Usor de folosit (si pentru incepatori);                                  ³
+³ ş Conceput pentru DOS - se incarca repede;                                 ³
+³ ş Efecte speciale (iluminare portiuni, topire etc.)                        ³
+³                                                                            ³
+³ Si cam asta ar fi. Acum urmeaza o descriere a functiilor programului.      ³
+³                                                                            ³
+³ P.S.  Partile acestui document fac uneori referinta intre ele, asa ca daca ³
+³       nu intelegeti ceva, este probabil explicat mai jos.                  ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ÚÄ Cum se foloseste ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³  Dupa ce rulati programul si asteptati nitelus pina se incarca, veti vedea ³
+³ interfata care va va insoti pe tot parcursul lucrului cu SPRedit. Presupun ³
+³ ca v-ati dat seama ca fereastra mare din stanga-sus este ecranul principal ³
+³ si ca butoanele colorate de jos au ceva de-a face cu paleta. In dreapta e- ³
+³ cranului principal avem de sus in jos:                                     ³
+³                                                                            ³
+³ ş 36 de butoane stranse intr-un chenar si inca 6 izolate in dreapta.       ³
+³ ş Un mini-ecran cu numele sprite-ului si-nca unu' cu dimensiunea.          ³
+³ ş (de la stanga la dreapta): mini-ecran cu sprite-ul la marimea reala, in- ³
+³   ca unul cu imaginea din "clipboard", mini-ecran cu textura din memorie,  ³
+³   cele doua culori curente (sus, principala si jos, secundara) si in final ³
+³   doua butoane.                                                            ³
+³                                                                            ³
+³ Pfiu ! Nu va lasati insa intimidati ! Un avantaj al SPRedit este ca se fo- ³
+³ loseste foarte usor ! Butoanele contin pictograme pentru a va ajuta sa me- ³
+³ morati functiile usor si pentru a infrumuseta interfata programului.       ³
+³                                                                            ³
+³ Primul pas in a invata cum sa folositi SPRedit ar fi aflarea functiilor de ³
+³ baza, gasite in coloana de 6 butoane din dreapta-sus. Ele se ocupa de ope- ³
+³ ratiile cu discul si alte chestii generale. Primul buton are desenat pe el ³
+³ o foaie de hartie. Acesta sterge din memorie sprite-ul curent si reseteaza ³
+³ dimensiunea si numele la 32, respectiv "SPRITE".                           ³
+³                                                                            ³
+³ Al doilea buton are desenat un floppy disk cu o sageata verde ce indica in ³
+³ sus. Acest buton se ocupa cu incarcarea unui sprite dintr-un fisier in ca- ³
+³ re acesta a fost stocat (cu extensia SPR). Cand dati click pe el, veti ve- ³
+³ dea pe ecranul principal o lista de fisiere/directoare, din care unul este ³
+³ marcat de un dreptunghi verde, si jos, cateva simboluri, din care unul, ca ³
+³ si fisierul/directorul selectat, este inconjurat de alt dreptunghi verzui. ³
+³ In acest moment, mouse-ul controleaza dreptunghiul verde de jos. Deplasand ³
+³ mouse-ul in stanga si-n dreapta, dreptunghiul va selecta alt simbol, si a- ³
+³ pasand pe butonul mouse-ului, se va executa actiunea specifica acelui sim- ³
+³ bol. Iata simbolurile comune celor doua browser-e, respectiv de fisiere si ³
+³ de directoare, de la stanga la dreapta:                                    ³
+³                                                                            ³
+³ ş Arata ca o sageata verde ce arata in sus - deplaseaza dreptunghiul verde ³
+³   ce marcheaza fisierul/directorul cu o pozitie mai sus. Daca dreptunghiul ³
+³   a ajuns la capat si mai sunt fisiere/directoare in directia deplasarii,  ³
+³   lista va face scroll.                                                    ³
+³ ş Arata ca o sageata verde, dar arata in jos - la fel ca la prima, dar de- ³
+³   plaseaza dreptunghiul in jos.                                            ³
+³ ş (diferit la fiecare)                                                     ³
+³ ş Simbolul universal pentru OK - daca selectati un fisier .SPR, il incarca ³
+³   si treceti la modul de editat. Daca selectati un director, va va pune sa ³
+³   alegeti fisierul .SPR din director care vreti sa fie incarcat. Cum ar fi ³
+³   si normal, n-o sa mearga daca directorul selectat nu contine nici un fi- ³
+³   sier .SPR !                                                              ³
+³ ş Un X rosu - anuleaza operatia si reveniti in modul de editare.           ³
+³                                                                            ³
+³ In browser-ul de directoare, simbolul din mijloc arata o sageata indrepta- ³
+³ ta spre un "folder" galben. Acesta este echivalentul functiei "cd X", unde ³
+³ X este directorul selectat cu dreptunghiul. Daca e selectat ".." atunci va ³
+³ duce in directorul anterior, iar "\" va duce in directorul radacina.       ³
+³ In browser-ul de fisiere, acelasi simbol arata acum ca un "folder" sub ca- ³
+³ re se gaseste un "?" galben. Acesta va duce in browser-ul de directoare.   ³
+³                                                                            ³
+³ Al treilea buton prezinta o discheta ca si butonul de incarcare (al 2-lea) ³
+³ dar de data asta cu o sageata rosie indreptata in jos. Acesta va salva fi- ³
+³ sierul sprite pe disc, prezentandu-va mai intai cu browser-ul de directoa- ³
+³ re. Alegeti û pentru a continua. ATENTIE ! Fisierul va fi salvat in direc- ³
+³ torul curent, afisat cu galben in partea de sus a ecranului, nu in cel se- ³
+³ lectat cu dreptunghiul verde ! Dupa ce ati ales directorul corect, va tre- ³
+³ bui sa alegeti numele pentru fisierul ce trebuie salvat. In acest sens, vi ³
+³ se vor prezenta o suita de caractere si simboluri, si, bineinteles, nelip- ³
+³ situl dreptunghi verde. Stiti cum se selecteaza ceva: miscati de mouse, a- ³
+³ poi dati click. X anuleaza operatia, û accepta. Sageata galbena indreptata ³
+³ spre stanga e un fel de Backspace - sterge un caracter din numele fisieru- ³
+³ lui, care e afisat sus, intr-un chenar. Simbolul albastru cu o sageata in- ³
+³ dicand in jos, aflata sub un "M" readuce pe afisaj numele ultimului fisier ³
+³ salvat. Daca ati salvat un fisier cu numele OZN_001 si vreti sa salvati cu ³
+³ numele de OZN_002 sprite-ul din memorie, puteti sa dati pe acest simbol si ³
+³ in chenarul de sus va aparea numele ultimului fisier salvat, care in acest ³
+³ exemplu este OZN_001. Acum nu ramane decat sa dati click pe sageata cu rol ³
+³ de backspace, pe cifra 2, pe û, si gata ! E mult mai bine decat sa scrieti ³
+³ tot numele inca o data. Revenind la discutia anterioara, fiti atenti ca nu ³
+³ trebuie sa specificati si extensia, ea este pusa automat. De fapt, nici nu ³
+³ aveti punctul ca simbol. Odata ce ati pus numele si ati dat pe û, mai tre- ³
+³ buie sa specificati dimensiunea pe X&Y a sprite-ului. Aveti de ales dintre ³
+³ 8x8, 16x16, 24x24, 32x32. ATENTIE MARE ! Daca se afla ceva desenat in afa- ³
+³ ra zonei definite de marime, se va pierde (reversibil). In timpul editarii ³
+³ programul va permite sa desenati oriunde pe "foaia" de 32x32, insa la sal- ³
+³ varea sprite-ului se va salva si retine in memorie numai o zona cu marimea ³
+³ de X*X, unde X este dimensiunea sprite-ului aleasa, zona incepind din col- ³
+³ tul stanga-sus al "foii". Chiar daca ati facut un sprite de 16x16, trebuie ³
+³ sa-l puneti in stanga-sus daca vreti sa se salveze complet. Daca ati facut ³
+³ greseala asta, veti vedea mai jos in text cum o puteti repara. Pentru a va ³
+³ ajuta in aprecierea dimensiunilor, liniile din grila sunt colorate intr-un ³
+³ mod special. Liniile obisnuite sunt colorate in gri-inchis, iar la fiecare ³
+³ 8 linii, una este colorata mai deschis. Aceste linii mai deschise "impart" ³
+³ foaia in 16 parti de 8x8. De exemplu, un sprite 16x16 trebuie sa incapa in ³
+³ cele patru patrate 8x8 din coltul stanga-sus.                              ³
+³                                                                            ³
+³ Al patrulea buton arata ca al treilea, cu exceptia sagetii, care este alb- ³
+³ astra. Asta salveaza fara nici o intrebare sprite-ul cu numele si dimensi- ³
+³ unea curente. Este perfect atunci cand ai facut doar schimbari la un fisi- ³
+³ er si nu mai vrei sa-i mai scrii numele de zece mii de ori.                ³
+³                                                                            ³
+³ Al cincilea buton prezinta 2 sageti verzi ce aduc aminte de simbolul reci- ³
+³ clarii. Acesta are rol de Undo/Redo, adica anuleaza efectul ultimei opera- ³
+³ tii efectuate, inclusiv "taierea" efectuata de salvare. Daca mai dati oda- ³
+³ ta pe el, se va Undo-a pe el insusi, readucand sprite-ul la starea pe care ³
+³ o avea inainte de Undo.                                                    ³
+³                                                                            ³
+³ Al saselea si ultimul buton are desenat un X rosu pe el. Sunt sigur ca du- ³
+³ pa multe taste/click-uri disperate ati rasuflat usurat cand l-ati gasit in ³
+³ sfarsit :-) Acesta iese din SPRedit, FARA sa va intrebe daca vreti sa sal- ³
+³ vati sprite-ul curent, asa ca ganditi-va bine inainte sa iesiti din el !   ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ÚÄ Cum se foloseste (II) ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³  Pentru a putea continua, trebuie mai intai sa intelegeti sistemul de scu- ³
+³ le al programului. Primele 6 butoane de sus (din cele 36) seteaza forma pe ³
+³ care o va folosi unealta selectata. Formele sunt, de la stanga la dreapta: ³
+³ punct, linie, dreptunghi, dreptunghi umplut, umplere zona (arata ca o pata ³
+³ rosie), umplere fereastra. Primele 5 dintre ele sunt butoane "radio", adi- ³
+³ ca numai unul poate fi apasat la un anumit moment. Pentru a desena o linie ³
+³ selectati pe ecranul principal punctul de origine, apoi punctul al doilea. ³
+³ La fel si pentru dreptunghiuri: dati clic unde vreti sa fie un colt, si u- ³
+³ nul unde vreti sa fie coltul opus. Apasarea butonului de umplere fereastra ³
+³ este echivalentul desenarii unui dreptunghi ce umple fereastra curenta.    ³
+³  Butoanele de pe randul al doilea (si nu numai) selecteaza cu ce unealta o ³
+³ sa desenezi forma selectata:                                               ³
+³                                                                            ³
+³ ş Creion - scrie cu culoarea principala.                                   ³
+³ ş Creta - lumineaza cu 1 nuanta.                                           ³
+³ ş Carbune - intuneca cu 1 nuanta.                                          ³
+³ ş Pensula - pune doar culoare, nu modifica nuantele.                       ³
+³ ş Spray - deseneaza cu efect tip "spray", forma 1 putin diferita.          ³
+³ ş Rola - scrie cu textura din memorie.                                     ³
+³                                                                            ³
+³ Sa zicem, de exemplu, ca vrei sa luminezi toata imaginea. Selectezi creta, ³
+³ apesi pe butonul de umplere fereastra (ultimul din primul rand) si gata !  ³
+³                                                                            ³
+³  Un alt lucru ce ar trebui explicat sunt culorile si textura. In SPREDIT o ³
+³ culoare este definita de culoarea propriu-zisa (1-8) si de nuanta (1-32).  ³
+³ Pentru a schimba culoarea, dai pe unul din cele 8 butoane colorate din jo- ³
+³ sul ecranului in stanga, iar pentru nuanta pe cele din dreapta. Textura nu ³
+³ e altceva decat un fel de "tapet", un model dispus in "dale". Textura ce o ³
+³ gasiti de fiecare data cand rulati SPREDIT este un model de caramizi, rea- ³
+³ lizat cu o imagine 8x8 de felul acesta:                                    ³
+³                                                                            ³
+³ ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿        ÚÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄ¿                             ³
+³ ³               ³        ÃÄÂÄÁÄÂÄÁÄÂÄÁÄÂÄÁÄÂÄ´                             ³
+³ ³               ³        ÃÄÁÄÂÄÁÄÂÄÁÄÂÄÁÄÂÄÁÄ´                             ³
+³ ÀÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÙ        ÃÄÂÄÁÄÂÄÁÄÂÄÁÄÂÄÁÄÂÄ´                             ³
+³         ³                ÃÄÁÄÂÄÁÄÂÄÁÄÂÄÁÄÂÄÁÄ´                             ³
+³         ³                ÃÄÂÄÁÄÂÄÁÄÂÄÁÄÂÄÁÄÂÄ´                             ³
+³ ÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄ        ÀÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÙ                             ³
+³                                                                            ³
+³       Model                     Rezultat                                   ³
+³                                                                            ³
+³ Cum anume se schimba textura, veti vedea mai jos in text.                  ³
+³                                                                            ³
+³ ATENTIE ! Pentru a ma referi la culoarea formata din culoarea propriu-zisa ³
+³           plus nuanta ei, eu voi folosi termenul "kuloare". Cind voi spune ³
+³           "culoare", ma refer NUMAI la culoarea propriu-zisa ! E complicat ³
+³           dar TINETI BINE MINTE !                                          ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ÚÄ Cum se foloseste (III) ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³  Butoanele de pe randurile 3 si 4 se ocupa de operatii cu ferestre. Pentru ³
+³ cei foarte "incepatori", dau definitia ferestrei in programele de desenare ³
+³ ca fiind: pur si simplu un chenar ce delimiteaza o zona din imagine asupra ³
+³ carei vor avea efect anumite operatiuni.                                   ³
+³  In SPREDIT, fereastra implicita este tot ecranul, iar in acest caz chena- ³
+³ rul nu apare. Daca fereastra difera de cea implicita, ea va aparea in for- ³
+³ ma unui chenar din linii intrerupte, colorat in mov. "Clipboard"-ul este o ³
+³ memorie temporara in care se poate tine minte o parte din/un intreg sprite ³
+³ si al carei continut este afisat in dreapta mini-ecranului cu sprite-ul la ³
+³ marimea reala. Butoanele de pe randul 3:                                   ³
+³                                                                            ³
+³ ş Briceag - nu va speriati, aceasta unealta nu indeplineste nici o functie ³
+³             de distrugere, doar va lasa sa definiti o fereastra la fel cum ³
+³             desenati un dreptunghi. Este unul din butoanele "radio" ce se- ³
+³             lecteaza unealta si blocheaza in timpul folosirii forma selec- ³
+³             tata pe "dreptunghi". Pentru a reveni in mod normal, alegeti o ³
+³             unealta de desenare. Atentie, asta reseteaza fereastra defini- ³
+³             ta la tot ecranul, lucru obtinut si cu butonul umplere fereas- ³
+³             tra.                                                           ³
+³ ş Lipici(I) - tot un buton de unealta. Miscati tubul in locatia dorita, si ³
+³               un clic va plasa imaginea din clipboard in chenarul rosu. In ³
+³               caz ca n-aveti nimic in clipboard, butonul va fi blocat.     ³
+³ ş Lipici(II) - la fel ca butonul anterior, dar acesta ia in seama punctele ³
+³                transparente din imaginea memorata. Incercati si vedeti !   ³
+³ ş Camera foto - "fotografiaza" ce-i in fereastra curenta si-l introduce in ³
+³                 clipboard.                                                 ³
+³ ş Foarfece - la fel ca aparatul foto, dar sterge totul din fereastra defi- ³
+³              nita dupa ce a copiat.                                        ³
+³ ş Rola+chenar - la fel ca aparatul foto, dar nu baga-n clipboard ci in me- ³
+³                 moria cu textura.                                          ³
+³                                                                            ³
+³  Butoanele de pe randul 4:                                                 ³
+³                                                                            ³
+³ ş Sageata dubla orizontala - intoarce imaginea din fereastra p'orizontala. ³
+³ ş Sageata dubla verticala - intoarce imaginea din fereastra pe verticala.  ³
+³ ş Sageata incovoiata - invarte imaginea din fereastra cu 90ø               ³
+³ ş 2 sageti orizontale - apleaca imaginea din fereastra pe orizontala, dupa ³
+³                         ce selectati unghiul: 45ø,27ø,13ø sau 11ø          ³
+³ ş 2 sageti verticale - tot asa dar pe verticala.                           ³
+³ ş Sageata dubla diagonala - redimensioneaza zona de desenare.... vedeti in ³
+³                             sectiunea anterioara la salvare pentru detalii ³
+³                             referitoare la efecte.                         ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ÚÄ Cum se foloseste (IV) ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³  Butoanele de pe randul 5 creeaza niste asa-numite "efecte speciale":      ³
+³ ş Puncte aleatoare - efect de paraziti in fereastra curenta. Considerind W ³
+³                      ca fiind culoarea principala, X ca fiind culoarea se- ³
+³                      cundara, Y&Z nuantele principala&secundara, fereastra ³
+³                      este umpluta cu puncte a caror kuloare variaza in mod ³
+³                      aleator intre W si X, si nuanta intre Y si Z.         ³
+³ ş Lacrima+linie - dandu-se o zona din fereastra curenta, umpluta cu puncte ³
+³                   de aceeasi culoare si nuanta ca principala kuloare, mar- ³
+³                   ginile acestei zone se vor "ajusta" pentru a da obiecte- ³
+³                   lor din afara zonei o impresie de margini netezite. Pen- ³
+³                   tru ca editorul nu stie decat 8 culori de baza, nu arata ³
+³                   prea profesional efectul, dar, ma rog ...                ³
+³ ş Nor de ploaie - "topeste" imaginea din f.c. cu fiecare apasare.          ³
+³ ş Disc si dreptunghi - transforma prin "colour-morphing" imaginea din fer. ³
+³                        curenta in cea din clipboard cu fiecare apasare. La ³
+³                        fel ca si la butonul 2, efectul e limitat de a edi- ³
+³                        torului paleta (ba, ce inversiune, ba!)...          ³
+³ ş Minge YinYang - inverseaza imaginea din fereastra curenta.               ³
+³ ş Televizor - ar trebui cu acesta sa vedeti animatia, incarcand cadrele a- ³
+³               cesteia de pe disc, dar din pacate in versiunea asta nu mer- ³
+³               ge... nasol...                                               ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ÚÄ Cum se foloseste (V) ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³  Ultimele 6 butoane se ocupa cu operatii coloristice, avand efect numai in ³
+³ fereastra curenta:                                                         ³
+³                                                                            ³
+³ ş Lupa - face parte din butoanele radio de selectare a formei. Blocat daca ³
+³          unealta curenta este briceag sau lipici. Miscand lupa peste un a- ³
+³          numit punct, culoarea&nuanta principala vor deveni identice cu a- ³
+³          celea ale punctului peste care este lupa.                         ³
+³ ş RosuAlbastru - cauta in fereastra punctele de aceeasi nuanta&culoare ca ³
+³                   secundara kuloare si pune in locul lor puncte de nuanta& ³
+³                   culoarea principalei kulori.                             ³
+³ ş RosuAlbastru - la fel, iar daca gaseste in fereastra puncte de culoarea ³
+³                   si nuanta kulorii principale, pune-n locul lor puncte de ³
+³                   kuloarea secundara.                                      ³
+³ ş Gradient rosuG.albastru - la fel ca butonul 2, dar nu ia in considerare ³
+³                              nuantele pt. identificare. Daca selectati ku- ³
+³                              loarea principala ca o nuanta de verde, de e- ³
+³                              xemplu, si a doua ca o nuanta mai inchisa, a- ³
+³                              pasand pe buton o data veti lumina tot ce es- ³
+³                              te verde in fereastra cu 1 nuanta. Experimen- ³
+³                              tati...                                       ³
+³ ş G.rosuG.albastru - la fel ca butonul 3, dar fara sa ia nuantele in con- ³
+³                       siderare...                                          ³
+³ ş G.rosuTextura - de fapt e texturagradient rosu; Tot ce se afla in ima- ³
+³                    ginea din f.c. de aceeasi culoare ca si kul. principala ³
+³                    (nuanta nu conteaza) va fi pictat cu textura. Daca tex- ³
+³                    tura e cea implicita, desenati un dreptunghi mov, si a- ³
+³                    legeti kuloarea mov de orice nuanta, apasand butonul a- ³
+³                    cesta veti obtine un zid in loc de mov.                 ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ÚÄ Concluzie ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³  Si gata! N-a fost chiar asa de greu, nu ? Desi v-am oferit o documentatie ³
+³ "mura-n gura", retineti ca cea mai buna metoda de a invata sa utilizati a- ³
+³ cest program este experimentarea. Cel mai rau lucru care se poate intimpla ³
+³ daca apesi ceva gresit e sa vina extraterestrii in orasul tau, sa-i omoare ³
+³ pe toti, sa-ti fure berea, TV-ul si calculatorul... ei, glumeam... Totusi, ³
+³ nu uita sa-ti salvezi opera des, caci niciodata nu stii ce "bug" obscur te ³
+³ pandeste dupa urmatoarea comanda...                                        ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ÚÄ Sfaturi ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³  Pentru acest program, n-am altele.                                        ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ÚÄ Autor ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³ Nume/prenume: Dinu Cristian Mircea                                         ³
+³ Alias: - nu pohtesc a-l cuvanta -                                          ³
+³ Varsta: 13 ani (serios, ma)                                                ³
+³ Ocupatie: Iradiare-in-fata-calculatorului                                  ³
+³ Motto: "Pisicile sunt moi si pufoase"                                      ³
+³ Religie: pazuzism                                                          ³
+³ Camera ospiciu: 1338                                                       ³
+³ Victime: 3                                                                 ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ÚÄ Erori "runtime" (mi-a fost lene sa bag detectare erori) ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³ ş 002: Fisier negasit                                                      ³
+³ ş 003: Cale negasita                                                       ³
+³ ş 005: Acces interzis (fisier R/O, poate aparea daca rulati de pe CD)      ³
+³ ş 006: Variabila fisier distrusa (Eroare memorie/pointer)                  ³
+³ ş 100: Eroare citire sau fisier incomplet                                  ³
+³ ş 101: Eroare scriere sau disc plin                                        ³
+³ ş 154,156,157,158: Erori disc grave                                        ³
+³ ş 160,161: Eroare scriere/citire                                           ³
+³ ş 162: Eroare hardware                                                     ³
+³ ş 200: Impartire cu zero                                                   ³
+³ ş 202: Supraincarcare stiva                                                ³
+³ ş 203: Supraincarcare memorie                                              ³
+³ ş 204: Eroare pointer sau memorie insuficienta                             ³
+³ ş 205: Numar in virgula flotanta prea mare                                 ³
+³ ş 207: Operatie in virgula flotanta gresita sau stiva coprocesor terminata ³
+³ ş 216: Eroare Generala de Protectie                                        ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ÚÄ Depanare ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³  Nici acilea n-am nimic de zis, doar ca programul va va face computerul sa ³
+³ explodeze daca i se pare ca ati umblat prin fisiere...                     ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ÚÄ Rasplata ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³  Pentru ca nu exista "cheat codes" pentru asta, nu pot sa dau decat un oa- ³
+³ recare sfat:                                                               ³
+³                                                                            ³
+³ ...dooooon't worry...                                                     ³
+³   ... beeeeee happy...                                                     ³
+³     ... and if that doesn't work ...                                       ³
+³       ... RANDOMIZE USR 0 ...                                              ³
+³         ... SYS 1 ...                                                      ³
+³          ... CTRL+ALT+DEL ...                                             ³
+³             ... HARA-KIRI ..                                              ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END!

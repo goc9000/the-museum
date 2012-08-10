@@ -1,0 +1,132 @@
+SprEdit
+=======
+
+Timeline
+--------
+
+A look at the file dates (see Appendix) suggests development started around
+September 1998 and the last major edit was made in Apr 1999.
+
+Description
+-----------
+
+SprEdit is the worthy successor to my homebrew sprite editor 'Graphics'. It
+features a much friendlier interface, better drawing tools, a bigger canvas
+(32x32 as opposed to Graphics' 24x24), greater speed, and, probably, fewer bugs.
+
+The color palette has changed as well, it is now 256 colors instead of 128,
+though it uses the same system of having a limited number of hues in conjunction
+with all possible levels of brightness (in retrospect, this was a terrible
+mistake - I should have at least halved the number of brightness levels and gone
+for twice the hues). Note that this means that sprites produced by SprEdit are
+not directly compatible with those produced by Graphics (they will load but the
+palette will be off).
+
+If you want to try out the application quickly, there's a precompiled version
+in the 'COMPILED' directory with all the auxiliary files (documentation etc.)
+that would be present in the final installation package.
+
+Compilation
+-----------
+
+First things first, compile all the files in the SOURCES directory so as to
+obtain SPREDIT.EXE. Move this to the final output directory (usually COMPILED).
+
+Now enter the RESOURCE directory and execute MAKEGRP.EXE while in the SPRITES
+directory. This will create the files IMG.GRP and IMG.NDX which you will rename
+to GRAFICA.GRP and GRAFICA.IDX respectively. Move these, along with a copy of
+PAL256.ACT, to a subdirectory called GUI in the final output directory. Also
+copy SPREDIT.DOC to the output directory while you're there.
+
+The final step is to compile MAKECHK.EXE from the POSTCOMP directory and run it
+in the final output directory. This should generate a SPREDIT.CHK file that the
+application uses to verify the integrity of its files. Note, however, that this
+check is disabled in the latest version of SprEdit, so pretty much any .CHK file
+will do.
+
+I didn't find any .BAT files in the original archive, so I assume I used to do
+all these steps manually.
+
+Usage
+-----
+
+The program includes a reasonably detailed manual and, at least as far as
+basic operations are concerned, the controls are intuitive enough for one to
+be able to get started quickly. Reading that manual makes me cringe now. You can
+certainly tell I was 13 when I wrote it.
+
+The interface is exclusively mouse-driven. This even includes the times when
+you must specify a filename; instead of typing it in, you select the letters
+one by one from an on-screen keyboard! In fact, the whole file selection
+interface is rife with egregious design choices. There are no words to describe
+it, just try it and see. The worst thing of all is that file and directory
+navigation are somehow separated; you select a folder first (without seeing any
+files), and only then SprEdit scans the folder for .SPR files and allows you
+to make a choice. Crazy. What was I thinking!?
+
+My usual habit of overengineering the wrong thing is apparent. Note how the
+cursor changes to reflect the tool you are using, and even the current hue.
+Even the eyedropper (represented as a magnifying glass) cursor changes so as to
+show the color underneath it. I thought it was a nice touch at the time, and
+still do, but in retrospect, it was definitely not the right thing to spend so
+much effort on.
+
+Technical Notes
+---------------
+
+The code sometimes seems even worse than that of Graphics. It is amazing how I
+could put so much care into the outward appearance of the program yet display
+such shocking ignorance of elementary programming principles.
+
+Note that there's a variable somewhere in the called called "monicalewinski".
+I shit you not. At least that confirms the 1998 timeframe for the development
+of the program.
+
+Appendix: Preservation Notes
+----------------------------
+
+This is a snapshot of the exact file dates and locations when SprEdit was
+'dug up':
+
+COMPILAT/DEMONST/ALIASRT.SPR                   09 Apr 1999
+COMPILAT/DEMONST/EXEMPLU.SPR                   21 Feb 1999
+COMPILAT/DEMONST/ROTUND1.SPR                   09 Apr 1999
+COMPILAT/DEMONST/SFERA1.SPR                    09 Apr 1999
+COMPILAT/DEMONST/SFERA2.SPR                    09 Apr 1999
+COMPILAT/GUI/GRAFICA.GRP                       18 Nov 1998
+COMPILAT/GUI/GRAFICA.IDX                       18 Nov 1998
+COMPILAT/GUI/PAL256.ACT                        06 Oct 1998
+COMPILAT/SPREDIT.CHK                           04 Apr 1999
+COMPILAT/SPREDIT.DOC                           04 Apr 1999
+COMPILAT/SPREDIT.EXE                           18 Sep 2007
+RESURSA/GUI/GRAFICA.GRP                        18 Nov 1998
+RESURSA/GUI/GRAFICA.IDX                        18 Nov 1998
+RESURSA/GUI/PAL256.ACT                         06 Oct 1998
+FILEZ.PAS                                      07 Oct 1998
+GENERAL.PAS                                    04 Apr 1999
+KEYBOARD.PAS                                   28 Sep 1998
+MAKECHK.PAS                                    17 Sep 1998
+SPREDIT.PAS                                    16 Apr 2000
+VIDEO.PAS                                      18 Sep 2007
+
+Date analysis
+.............
+
+Note the two 'phases' in development (Sep-Oct 1998 and Apr 1999) and especially
+the much later edits in 2000 and 2007. I think I modified the main program in
+2000 so as to disable the integrity check so that I could re-run for fun without
+much hassle (I had stopped using it by then); then, in 2007, I recall playing
+with the video mode settings to see whether I could get SprEdit to run in
+320x240 mode.
+
+Content analysis
+................
+
+There is something wrong with the RESURSA directory. Normally, this would
+contain all of the individual .SPR files that go into making the .GRP resource
+file, as well as the utilities for doing that (MAKEGRP at the least). I must
+have accidentally deleted this at some point, then, seeing in horror what I
+had done, I decided to just put a copy of the .GRP file in there, so that, if
+necessary, I could unpack it to retrieve the original .SPR files. This is just
+what I have done as part of my preservation operations.
+
