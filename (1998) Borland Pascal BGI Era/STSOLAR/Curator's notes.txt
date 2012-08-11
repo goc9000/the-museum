@@ -1,0 +1,19 @@
+Sistem solar
+============
+
+Timeline
+--------
+
+Last edit date is 31 Aug 1999.
+
+Description
+-----------
+
+This is supposed to be a visual simulator for the movement of the planets around
+the Sun. It is, of course, complete bollocks from a scientific standpoint, but
+I guess it might have some glimmer of educational value.
+
+Technical Notes
+---------------
+
+Pluto was still a planet back then! Ah, good times...
