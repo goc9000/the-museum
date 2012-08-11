@@ -1,0 +1,27 @@
+Reversi
+=======
+
+Timeline
+--------
+
+Last edit date is 19 Aug 1999.
+
+Description
+-----------
+
+This is an implementation of Reversi (also known as Othello). You can play
+either against the computer or a human player, and, as a bonus, you can also
+get the computer to play itself.
+
+Technical Notes
+---------------
+
+I seem to remember heavy inspiration was drawn from a ZX Spectrum type-in, which
+might explain the bizarre GOSUB comments that show up in the algorithm unit.
+The algorithm is of the simple 1-ply positional kind: the value of a move is
+evaluated by counting the pieces of either side and weighing them in accordance
+to their position on the board: pieces in the corner, for instance, are given
+the greatest weight because they can never be retaken; pieces one square away
+from the egde, however, have poor value because they invite the enemy to retake
+them and thus gain a valuable position on the edge or even in the corner of the
+board. It makes for a pretty decent opponent against a beginner, I think.
