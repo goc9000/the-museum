@@ -1,0 +1,14 @@
+Aberatii
+========
+
+Timeline
+--------
+
+Last edit date is 02 Jan 1999.
+
+Description
+-----------
+
+This is a demo of the BGI driver/font embedding system that includes some
+genuinely cringe-worthy attempts at being funny. Yeah. It was made for a friend
+of my oldest brother Sorin.
