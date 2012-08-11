@@ -14,5 +14,5 @@ then going back to doing some BGI programs as a challenge to myself.
 Note that BGI programs generally needed to include some object files such as
 fonts and at least one driver. These have been encapsulated in the units
 BGIDRIV.TPU and BGIFONT.TPU. I have also included the sources for these in the
-folder COMMON.LIB.
+folder 'Common BGI libraries'.
 
