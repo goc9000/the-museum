@@ -1,0 +1,24 @@
+Traversare
+==========
+
+Timeline
+--------
+
+Dates suggest a development period from 18 to 28 Jun 2000.
+
+Description
+-----------
+
+A Frogger clone. Cross the lanes without getting hit by the myriad enemies.
+
+Note that the game was intentionally made to look and sound very 'retro', as if
+running on an arcade machine of old.
+
+Technical Notes
+---------------
+
+There's some pretty nice direct handling of the PC speaker. The sound effects
+really do seem to capture that Atari 2600 feel.
+
+You wouldn't know it just from looking at it, but the enemy design pays homage
+to a ZX Spectrum type-in that first introduced me to the Frogger concept.

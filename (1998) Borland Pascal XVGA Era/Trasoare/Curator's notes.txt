@@ -1,0 +1,22 @@
+Trasoare
+========
+
+Timeline
+--------
+
+Last edit date is 08 Jul 2000.
+
+Description
+-----------
+
+A Tron/Lightcycle clone. Drive around the grid, taking care not to hit you or
+your opponents' trails, and trying to get them to run into theirs.
+
+Note that the game was intentionally made to look and sound very 'retro', as if
+running on an arcade machine of old.
+
+Technical Notes
+---------------
+
+There's some pretty nice direct handling of the PC speaker. The sound effects
+really do seem to capture that Atari 2600 feel.
