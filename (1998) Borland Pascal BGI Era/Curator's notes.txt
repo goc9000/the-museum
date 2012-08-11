@@ -1,0 +1,18 @@
+General Notes About the Borland Pascal BGI Era
+==============================================
+
+This era includes all programs made using the standard graphics facilities in
+Borland Pascal, i.e. the BGI (Borland Graphics Interface). The BGI was friendly
+and portable, but awfully slow, so I generally only used it for puzzle games or
+when I really could not do without the higher resolutions modes.
+
+The chronological relationship between this and the XVGA era is not simple. In
+fact, it seems to me they were hopelessly intertwined, with me first starting
+with BGI, then being quickly lured to the amazing speed of the XVGA facilities,
+then going back to doing some BGI programs as a challenge to myself.
+
+Note that BGI programs generally needed to include some object files such as
+fonts and at least one driver. These have been encapsulated in the units
+BGIDRIV.TPU and BGIFONT.TPU. I have also included the sources for these in the
+folder COMMON.LIB.
+

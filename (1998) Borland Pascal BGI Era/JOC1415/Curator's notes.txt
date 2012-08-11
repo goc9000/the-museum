@@ -1,0 +1,33 @@
+Joc 14-15
+=========
+
+Timeline
+--------
+
+Last edit date is 20 Aug 1999.
+
+Description
+-----------
+
+This is a simple implementation of the well-known '14-15 puzzle'. Play is pretty
+straightforward, you choose the difficulty (which is a measure of how much
+shuffling there will be at first), and then try to arrange the pieces into their
+original configuration. Note that only solvable puzzles are generated - in fact,
+you can see that the program does the shuffling much like a human would.
+
+Note that the credits claim that the puzzle was invented by Sam Lloyd. This is
+now believed to be false, instead Wikipedia mentions a Noyes Palmer Chapman as
+the true inventor.
+
+Technical Notes
+---------------
+
+The programming is not great, but you can see that I've made some progress in
+terms of making my code cleaner and more modular. Or maybe it's just that the
+program itself is simpler and there is less opportunity for spaghettizing things
+up.
+
+Note that some of my XVGA "knowledge" has crept in: I change the palette and do
+v-syncing.
+
+If you look closely, there is some material left over from Reversi.
