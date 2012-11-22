@@ -1,0 +1,11 @@
+General Notes About the Advanced Text Mode Era
+==============================================
+
+This period runs parallel to my Borland Pascal BGI and XVGA explorations. The
+programs grouped herein are distinguished by their use of text mode, custom
+fonts and user defined graphics. Although by this time I was able to program a
+proper graphical interface, many of the programs here were made this way due to
+my desire to challenge myself by pushing retro techniques to their limits (and
+also as a homage to the ZX Spectrum, which had returned to my full attention
+during this period).
+
