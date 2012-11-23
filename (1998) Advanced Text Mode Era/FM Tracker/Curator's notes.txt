@@ -1,0 +1,67 @@
+FM Tracker
+==========
+
+Timeline
+--------
+
+The file dates suggests a development period around Sep 1999.
+
+Description
+-----------
+
+FM Tracker is a program for composing music playable by the FM synthesis chips
+in cards like the Soundblaster or Adlib. It was intended to help me with making
+theme music for my games, even though in the end only Astrozappers featured
+music (and it was composed manually, before FM Tracker was ready).
+
+The interface paradigm used is that of the 'trackers' that were used for making
+sample-based music in formats such as .MOD, .XM, .IT, etc. (indeed, the famous
+Impulse Tracker was my main inspiration for the interface design). This means
+that the song is composed of 'tracks' that play simultaneously. Within a track
+there is no polyphony and only one instrument can be active at a given time. The
+user is responsible for placing note attack/decay events on the tracks, as well
+as special 'effect' events that cause an instrument to sound differently, change
+the track volume, repeat a portion of the song, etc.
+
+Note the nice touches here and there: UDGs are used for giving icons to
+instruments, drawing gauges and representing the various components of the drum
+track (they even animate during playing!).
+
+A simple FM organ program is also included.
+
+Usage
+-----
+
+The interface is pretty straightforward if you've used trackers before. The
+bar at the bottom of the screen shows all the functions you have access to at
+the moment. Extra functions are accessed by holding down modifier keys,
+Emacs-style. You spend your time between the track display, where you can
+insert note events, and the instrument control area (you can switch to it
+using TAB), where you can set up instruments for your song.
+
+To try out any of the included songs, you need to press F3, then type in the
+path to the song (there is no file browsing dialog!), e.g. "SONGS/ASTRO.FTM".
+Then press F5 to play. To stop, press F8 and then Home to rewind the song before
+loading another one (FM Tracker doesn't do this automatically).
+
+Included Songs
+--------------
+
+ASTRO.FTM   : Intended as a remake of the Astrozappers theme (which was made
+              manually before FM Tracker was ready). Unfinished.
+ASTRO2.FTM  : Variant of the above that features a different intro. Unfinished.
+DEMOSNG1.FTM: A transcription of a .MOD file that is itself a rendition of what
+              is most likely a Bach prelude.
+PACMAN_F.FTM: The intended theme song for PacMan Forever. A highly formulaic
+              jazzy bit.
+POP.FTM     : A transcription of a .MOD file rendition of the well-known song
+              'Popcorn'. Unfinished.
+TEMP.FTM    : One of my composition efforts. Unfinished.
+WARTREK.FTM : An attempt at a theme for WarTrek. Unfinished.
+
+Technical Notes
+---------------
+
+The code is, of course, rubbish. There is some understanding of the use of
+functions, but also a worrying amount of copy-paste coding.
+
