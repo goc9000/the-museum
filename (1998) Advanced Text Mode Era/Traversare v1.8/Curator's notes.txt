@@ -1,0 +1,51 @@
+Traversare v1.8
+===============
+
+Timeline
+--------
+
+Development occured mostly during December 2004.
+
+Description
+-----------
+
+This is a rewritten and improved version of Traversare v1.0 that I submitted as
+a final project for my Introduction to Informatics (i.e. programming) course.
+It is written in Borland C (as opposed to Borland Pascal) and features slightly
+better graphics and gameplay, but no sound.
+
+Compiling
+---------
+
+All you need to do is open up the Borland C++ IDE, create a project and add all
+the .C sources, then issue the Build All command. You can probably also use the
+BCC program from the command line.
+
+Usage
+-----
+
+The gameplay is straightforward - avoid the cars and make your way towards one
+of the four openings in the top (where the frogs supposedly live). Once all
+four openings have been filled, you pass to the next level. Starting from
+level 4 onwards, you also have to collect a key before you can access any of
+the openings.
+
+From time to time, a fly will appear in a random location. Catch it before it
+disappears and you can get a bonus. You also get a bonus for daring maneuvers
+like jumping away right before a car hits you.
+
+You can press P to pause the game. In the menu screen, you can also press N to
+select the starting level (it's displayed in the status bar) and C to switch
+to a nicer color palette. If you're wondering why the program doesn't just
+select the palette automatically, it's because I wasn't entirely sure that it
+would work properly under the Windows machines we had in the computer lab.
+
+Technical Notes
+---------------
+
+Wow! What a welcome change from the typical mind-bogglingly awful code that
+was typical of my early years. This time the code is clean, organized, and
+logical. There are still some minor flaws, but at least it's not cringeworthy.
+I'm not sure if this change was due to my college training, or if I had already
+started being more self-conscious about my style even before I started college.
+

@@ -1,0 +1,37 @@
+Traversare v1.0
+===============
+
+Timeline
+--------
+
+This one's a bit tricky. There is only one .PAS file and it's dated Nov 2004,
+but the font file is from May 2001. Given the fact that a Borland C version of
+this program was created in December 2004, featuring a clearly improved code
+style, it's far more likely that this version was developed around May 2001.
+The later date on the .PAS file is the result of me tweaking the program so
+that it would run again on my system before I could draw inspiration for it
+when designing the C version.
+
+Description
+-----------
+
+Another Frogger clone intended as a homage to a ZX Spectrum type-in. This time,
+the similarities to the Spectrum version are even stronger, as this program
+also uses UDGs and character-level coloring.
+
+The interface is in Romanian, but I doubt that will pose a problem to playing
+such a well-known game.
+
+Technical Notes
+---------------
+
+The CRT unit in Borland Pascal had a notorious bug that caused the delay()
+function to stop working in high-end systems. The game tries to work around
+this by providing its own delay routine with an RTC-based calibration run at
+the start of the program. This also allows for the sub-millisecond delays used
+in the game's Atari-like sound effects. Unfortunately, the routine is not very
+well designed and doesn't work properly in DosBox. There is no way to fix this
+without making extensive changes to the program, so I have provided a manually
+patched executable that should work okay under DosBox provided you run it with
+the 'cycles' parameter fixed at 30000.
+
