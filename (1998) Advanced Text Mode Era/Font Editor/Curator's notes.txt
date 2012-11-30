@@ -1,0 +1,44 @@
+Font Editor
+===========
+
+Timeline
+--------
+
+The file dates suggest development occured mostly around June 1999. Although
+there are many files dating from December 2000, it is likely that this was me
+coming back to the program and trying to optimize it and get it to a fully
+completed state. The core font files, however, date from Jun 1999, and the
+program had to have been in a usable state by Sep 1999, when the font for FM
+Tracker was created.
+
+Description
+-----------
+
+This is an editor for VGA text mode fonts (size 8x16 to be precise). Since
+most of my text mode programs featured custom fonts, it was obviously quite an
+important utility to have around.
+
+The interface is in Romanian (it even features diacritics!). I guess I must
+have been going through a phase where I thought that since I would be the only
+person using these programs, why not use my native language as a challenge...
+There aren't that many commands in the program though, so anyone should be able
+to get around the program easily after checking out a few words in a
+dictionary.
+
+Emulation remarks
+-----------------
+
+Unfortunately, due to limitations in VGA font emulation in Dosbox 0.74, the
+second display from left to right, which is supposed to show you the complete
+font you are editing, will always show the "default", unmodified system font.
+You can view .FNT files in full using the utilities from the Font Operations
+suite.
+
+Technical Notes
+---------------
+
+Typically rubbish code with excessive emphasis on presentation as opposed to
+functionality. At least this time I bothered to code a proper file selection
+dialog. One other interesting fact is that I had begun to harness the power
+of embedding files as program constants.
+

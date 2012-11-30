@@ -1,0 +1,21 @@
+Font Utilities
+==============
+
+Timeline
+--------
+
+The utilities were all created on June 02, 1999.
+
+Description
+-----------
+
+This is a suite of three simple utilities for working with VGA text mode fonts:
+
+VIZFNT14: View 8x14 font
+VIZFNT16: View 8x16 font
+SCHIMBFN: Change font persistently
+
+The font viewing utilities display a full ASCII table and the full text of a
+(lame) joke. The attached screenshot shows the output for the FM Tracker font;
+you can see the UDGs for instrument icons and drum track indicators.
+
