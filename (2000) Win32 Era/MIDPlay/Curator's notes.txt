@@ -1,0 +1,32 @@
+MIDPlay
+=======
+
+Timeline
+--------
+
+File dates suggest the program was developed from August to September 2000.
+
+Description
+-----------
+
+MIDPlay is a simple Winamp-like program for MIDI music (.MID and .RMI files).
+I remember making it mainly because all of the other MIDI players I had simply
+took up too much space on the screen.
+
+The interface is made to resemble a real-life stereo with LCD display. I still
+think it looks pretty neat. Some nice touches are the fact that the window is
+non-rectangular, and that the loudspeakers animate while playing.
+
+The program text, minimal as it is, is in Romanian. For an English version,
+check out MIDENG.EXE.
+
+Note that there is a more advanced MIDPlay version, written in Delphi, that
+takes the concept further, even allowing for things such as player skins (!).
+
+Technical Notes
+---------------
+
+The code is rubbish as usual. Note the appearance of the 'non-rectangular
+window region' trick. I would revisit this fascinating gimmick many times in
+the future.
+
