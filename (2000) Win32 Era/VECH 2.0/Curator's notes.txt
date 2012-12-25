@@ -1,0 +1,25 @@
+V.E.C.H. v2.0
+=============
+(Vizualizator/Editor/Comparator Hexazecimal - "Hex Viewer/Editor/Comparer")
+
+Timeline
+--------
+
+File dates suggest the program was developed during September 2000.
+
+Description
+-----------
+
+V.E.C.H., as the name suggests, is a hex editor with a realtime side-by-side
+compare function. It has only a minimal set of features and suffers from the
+crippling limitation in that, like Notepad, it can only handle files up to
+64K in size. I seem to remember I mostly used it with ZX Spectrum emulator
+snapshots (.SNA files), so that was not a problem for me.
+
+Technical Notes
+---------------
+
+The code is awful as always. The worst part remains the design, though -
+only 64K and not even a character display to go with the hex screens? What
+was I thinking?
+
