@@ -1,0 +1,19 @@
+General Notes About the Win32 Era
+=================================
+
+This era marks the beginning of my transition to Windows-based programming.
+Although most such work was done in Delphi and other RAD environments, I did
+initially experiment with old-style programming using the Win32 API and the
+Borland Pascal for Windows custom control system. As is typical, I began by
+tinkering with the Borland demos (Swat!, Paint etc.) and gradually learned how
+to create my own Windows games and utilities.
+
+Note that even as early as Borland Pascal, Windows programming was also an
+opportunity to get acquainted with OOP - you had classes like TWindow, etc.
+which provided convenient wrappers around the complex Win32 API. Unfortunately,
+I remember quite distinctly that I did not truly understand OOP at that time.
+As is quite evident in the code, I use it in a 'cargo cult' fashion, going
+through the motions in order to get my program running but without any real
+understanding as to its power and benefits. True mastery of OOP would come
+much, much later for me.
+
