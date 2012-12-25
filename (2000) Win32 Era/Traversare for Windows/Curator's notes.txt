@@ -1,0 +1,40 @@
+Traversare for Windows
+======================
+
+Timeline
+--------
+
+File dates suggest the program was developed from August to December 2000.
+
+Description
+-----------
+
+What is it with me and Frogger clones? I guess if it's worth doing once, it's
+worth doing it again, and again, and again...
+
+Of all my Frogger clones, this is probably the most polished. It features
+semi-isometric graphics, MIDI music and sound effects (yes, the sound effects
+are MIDI as well!) and even a sort of 'night mode' where the hazards are
+harder to see and you have to guess their size by their headlights. My original
+plan was to make many other kinds of levels (evening, fog, thunderstorm etc.)
+but eventually I moved on to other projects.
+
+The game is in Romanian, but features help files in both English and Romanian.
+Check out the DOC folder.
+
+Technical Notes
+---------------
+
+The code is pretty bad. Notably, there is no real use of OOP, as would be
+expected for a Windows application in this era. Nevertheless, there are some
+subtle signs of progress. I'm beginning to use the 'case' construct
+appropriately, and, except for a few instances, the code is decently split up
+into functions and procedures. I also used a neat trick for storing and
+displaying the many sprites for the hazards in this game: instead of having
+hundreds of individual bitmaps (and thus variables, as I hadn't mastered
+arrays of objects, apparently), they are all stored in a single image. When a
+hazard (car, crocodile etc.) is to be displayed, the coordinates of that
+particular sprite within the bitmap are computed, and only that area is
+blitted to screen. This is somewhat similar to the mechanism used internally
+in Delphi's ImageLists, or modern-day CSS sprites.
+
