@@ -1,0 +1,131 @@
+Invazii Spatiale
+================
+("Space Invasions")
+
+Timeline
+--------
+
+The file dates suggest two main development phases, one from June to August
+1998, and the second ending in January 1999.
+
+Description
+-----------
+
+Invazii Spatiale is a take on the old Space Invaders theme. It features the
+following enhancements to the original idea:
+
+- a somewhat easier game model in which the invaders glide slowly and your
+  laser can fire in bursts; on the other hand, you no longer have shields to
+  hide behind.
+- five different sets of baddies (to break the monotony), each with its own
+  animation and a potentially different projectile type
+- sound effects on the Soundblaster or PC speaker
+- a nice ending screen that you get after completing 21 levels
+
+Note that despite the appearance of polish, the game is actually unfinished;
+see the 'Notes on the Graphics' section at the end. Nevertheless, it stands out
+as my first effort at making a game that was as close to commercial quality as
+was feasible for a 13-year old.
+
+If you want to try out the application quickly, there's a precompiled version
+in the 'COMPILED' directory with all the auxiliary files (documentation etc.)
+that would be present in the final installation package.
+
+Compilation
+-----------
+
+First things first, compile all the files in the SOURCES directory so as to
+obtain INV.EXE. Move this to the final output directory (usually COMPILED).
+
+Now enter the RESOURCE directory and execute MAKEGRP.EXE while in the SPRITES
+directory. This will create the files IMG.GRP and IMG.NDX which you will rename
+to GRAFICA.GRP and GRAFICA.IDX respectively. Move these, along with a copy of
+PAL128.ACT, DECOR.RLE and all the .VOC files in the SOUNDS directory, to a
+subdirectory called DATE in the final output directory. Also copy INV.DOC to
+the output directory while you're there.
+
+The final step is to compile MAKECHK.EXE from the POSTCOMP directory and run it
+in the final output directory. This should generate a INV.CHK file that the
+application uses to verify the integrity of its files. Note, however, that this
+check is disabled in the latest version of the program, so pretty much any .CHK
+file will do.
+
+I didn't find any .BAT files in the original archive, so I assume I used to do
+all these steps manually.
+
+Technical Notes
+---------------
+
+The code is so bad it makes me cringe at every page. Check out the procedures
+'DetermineShot', 'InvadersDraw', 'Indications'... outrageous redundancy that
+makes me wonder whether I truly understood even such simple constructs as
+arrays.
+
+Note that there are occasions where a textmode message is printed letter by
+letter using the write() function. This was an intentional, though naive,
+attempt at obfuscation on my part - so that the messages wouldn't be easily
+visible if one opened up the .EXE in a hex editor.
+
+Invazii Spatiale was the last XVGA game to use the "Graphics" sprite editor and
+its associated palette, before SprEdit replaced that. The MAKEGRP/MAKECHK
+utilities and other idioms common to my games were also likely first used here.
+
+Notes on the Graphics
+---------------------
+
+If you play up to the second level, you will see there is a sudden shift in the
+artwork quality starting from the third row of baddies down. You will also
+notice that when these invaders are hit, the "pain/falling" frame shows the
+invader beginning to disintegrate as the result of an explosion. This is
+because, originally, invaders would explode when killed just as they do in most
+games. Sometime in January I must have decided that this might be too violent,
+so I altered the program so that invaders "bounce" in pain when hit and "fall
+off the screen" when killed. This requires that the "about to explode" frame
+be replaced with a "falling" frame for every invader type, and I figured that
+while I'm doing that, I might as well spruce up the artwork a bit, as it had
+been quite some time since I drew the baddies and my skills had improved a bit
+over time. Unfortunately, I only got to the 7th baddie before I abandoned the
+project for some unkown reason - as a result, all the baddies from the 8th on
+look a bit off and look like they're burning when they fall.
+
+The idea of having a fireworks show as the ending screen almost certainly has
+much to do with me witnessing the 1998-1999 New Year celebrations only a few
+weeks before. I still think it looks pretty neat.
+
+Notes on the Sounds
+-------------------
+
+The original version of this game used sounds 'borrowed' from various games or
+online sources I had access to at that time. This was not a problem back then,
+as the games were made for for my personal use only. Now that I am publishing
+this content, be it historical in nature, I have decided to replace the sounds
+with free alternatives from the FreeSound website, so as to avoid any legal
+trouble. The attribution info for these free sounds follows (note that most of
+them have been further remixed and processed for use in the game):
+
+AIE.VOC: Original creation
+BIP.VOC: Remix of #67619 'radio-beep-1' by qubodup
+BLT.VOC: #19487 'jacobsladdersingle2' by halleck
+BUM.VOC: #80500 'exp-obj-large03' by ggctuk
+CLC.VOC: #63531 'click1' by florian-reinke
+FLA.VOC: #87564 'fire' by sgak + #74964 'campfire-2' by zmb94
+HIT.VOC: Original creation
+LAS.VOC: #18382 'hvylas' by inferno
+PHO.VOC: #136702 'laser-zap' by hoscalegeek
+SLI.VOC: #41530 'slimeatk' by jamius + #104042 'blood-hits-1' by willhiccups
+
+One may notice that the sounds are unusually short, rarely exceeding 0.8
+seconds in length. This is because my programs at the time used a small memory
+model which meant that all data had to fit in 64K (!). This also explains why
+the sounds are all resampled at 11KHz.
+
+The original archive also contained a sound file called 'ARM.VOC' (ARM probably
+stands for Armageddon) which consists of a low rumble followed by a gigantic
+explosion. This was likely intended for use with the game over sequence that
+occurs when the invaders manage to reach the bottom of the screen, presumably
+destroying the city and/or Earth. As the sound was very long (24K in length),
+it remained unused as I couldn't figure out how to fit it into memory, or
+couldn't be bothered. In retrospect, it was easy - all I had to do is unload
+the other .VOC files, load this one, play it, then load the others back from
+disk.
+

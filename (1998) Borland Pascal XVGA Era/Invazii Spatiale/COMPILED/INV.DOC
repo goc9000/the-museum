@@ -1,0 +1,116 @@
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³	      Invazii Spatiale (C) 1998 Dinu Cristian Mircea		     ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ÚÄ D'ale legii ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³ ş Acest program este FREEWARE. Sunteti incurajat sa-l distribuiti oriunde, ³
+³   dar GRATIS. Daca tocmai ati CUMPARAT acest program pentru o suma de bani ³
+³   atunci "ati luat teapa" !						     ³
+³ ş Programul trebuie distribuit INTEGRAL, fara nici un fisier lipsa sau mo- ³
+³   dificat ! Nu va apucati sa umblati prin el, caci cine face asa ceva este ³
+³   un porc nesimtit si [CENZURAT], sau mai precis, un "lamer". 	     ³
+³ ş Nu imi asum nici o responsabilitate asupra efectelor pozitive sa negati- ³
+³   ve care le va produce acest program ! Folositi-l pe propriul dvs. risc ! ³
+³ ş Nu modificati documentatia sau fisierele sub nici o forma ! 	     ³
+³ ş Trademark-urile companiilor mentionate in aceasta documentatie sunt uti- ³
+³   lizate doar pentru identificare si sunt proprietatea companiilor respec- ³
+³   tive.								     ³
+³ ş Tot ce-i mai sus e valabil si pentru chestiile ipotetic subintelese.     ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ÚÄ Ce va trebuie ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³ ş Computer   : PC sau compatibil.					     ³
+³ ş Procesor   : Programul a fost construit pe un 586(133Mhz), dar merge de- ³
+³		 sigur si pe ceva mai lent...				     ³
+³ ş Plc. video : VGA (desi azi toata lumea are sVGA).			     ³
+³ ş Periferale : Tastatura.						     ³
+³ ş Memorie RAM: Vreo 220K.						     ³
+³ ş Spatiu disc: Cam tot atata. 					     ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ÚÄ Ce este/face ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³  Probabil cele mai populare jocuri ce au existat pe console si calculatoa- ³
+³ rele de demult au fost jocuri ca 'Galaga','Space Invaders' etc. Jocul asta ³
+³ este o versiune PC bazata pe cel din urma. Calculatoarele vechi au raposat ³
+³ de multa vreme, desi de fapt continua sa existe ca emulatoare, dar cine ar ³
+³ vrea sa vada acelasi set monoton de invadatori, laserul tau oribil de lent ³
+³ versus ploaia de gloante de la invadatori, iar tu in spatele unui scut ga- ³
+³ urit, asteptand infrigurat extraterestrii sa te distruga ..? Exista si al- ³
+³ te versiuni PC, dar n-au adus prea multe lucruri originale. Iata diferenta ³
+³ dintre jocul original si acesta:					     ³
+³									     ³
+³ ş Grafica VGA 320x200x256.						     ³
+³ ş Sunet pe SoundBlaster(TM) si chiar pe speaker !			     ³
+³ ş 21 de nivele si un sfarsit dragut.					     ³
+³ ş 5 seturi de invadatori colorati, ce asteapta sa fie ciuruiti !	     ³
+³ ş Nu mai ai scuturile de jos, dar nici invadatorii nu trag ca nebunii, as- ³
+³   ta doar daca nu esti cumva la nivelele 18-21 ...			     ³
+³ ş In loc de bonusul pentru OZN-ul de sus, ai acum bonus impuscand un inva- ³
+³   dator in timp ce trage.						     ³
+³ ş Invadatorii se misca fluid, si nu sacadat.				     ³
+³ ş Invadatorii trag cu proiectile diferite.				     ³
+³ ş Laserul tau trage in rafale si e rapid.				     ³
+³ ş Primesti o nava la fiecare 10000 puncte.				     ³
+³ ş + multe, multe altele !						     ³
+³									     ³
+³  Scopul ? e simplu ! Vin extraterestrii -> arde-i, daca nu ...	     ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ÚÄ Control ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³  Nava se controleaza cu sagetile, cu spatiu se trage, iar cu F1 se apelea- ³
+³ za un meniu de optiuni: (aici sunt aratate si setarile originale)	     ³
+³ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿³
+³³ş TERMINAT : Te intoarce in titlu/joc, depinde cind ai apasat F1	    ³³
+³³ş SUNETE X : Activeaza/dezactiveaza sunetele pe SB/Speaker.		    ³³
+³³ş VITEZA 1 : Schimba viteza jocului (1 sau 2) afectind si animatia.	    ³³
+³³ş SINCRO û : Activeaza/dezactiveaza sincronizarea miscarii invadatorilor  ³³
+³ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ÚÄ Sfaturi ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³  Acestea sunt cateva sfaturi pentru a asigura viteza si functionarea aces- ³
+³ tui program:								     ³
+³									     ³
+³ ş Este bine sa rulati programul fara a avea TSR-uri cum ar fi SmartDrive,  ³
+³   programe de gestionare a memoriei si altele. Acestea, dupa ce ca pot in- ³
+³   terfera cu programul, il incetinesc si ocupa memorie.		     ³
+³ ş Programul nu poate fi rulat de pe CD, pentru simplul motiv ca nu va reu- ³
+³   si sa actualizeze topul si configuratia. Nu stiu cum merge daca e incar- ³
+³   cat de pe discheta, cert este ca va incarca nivelele lent si ca se va u- ³
+³   za discheta un pic. 						     ³
+³ ş Rularea in Windows ((C)(TM) etc.) este o sursa sigura 100% de probleme,  ³
+³   conflicte, etc. Nu o recomand.					     ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ÚÄ Depanare ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ÚÄ Autor ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³ Nume/prenume: Dinu Cristian Mircea.					     ³
+³ Alias: - nu-l divulg inca -						     ³
+³ Varsta: 13 ani (serios, ma).						     ³
+³ Ocupatie: Iradiare-in-fata-calculatorului.				     ³
+³ Motto: "Pisicile sunt moi si pufoase" 				     ³
+³ Expresii preferate: "Treaba de profesionist ..."			     ³
+³		      "Mare chestie, asa ceva puteam sa fac si eu in Qbasic" ³
+³		      "Ee, se mai intampla !"				     ³
+³ Religie: Pazuzism.							     ³
+³ Camera ospiciu: 1338							     ³
+³ Victime: 2								     ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ÚÄ Rasplata ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³ Si acum, pentru ca ati citit acest document important de la inceput si pina³
+³ la sfirsit, iata-va rasplata: 					     ³
+ÃÄ 'Cheat-uri' ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ ş Pentru a termina nivelul: Alt+F2					     ³
+³ ş Pentru a termina jocul  : Alt+F3					     ³
+³ ş Pentru nave in plus     : Alt+F4					     ³
+³ Totusi, va recomand sa nu le folositi pentru ca, asaa, din intimplare .... ³
+³ iti cam reseteaza scorul la zero ...					     ³
+ÃÄ Numele inamicilor ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ Nivel 0, Rindul 1: Tropaila						     ³
+³ Nivel 0, Rindul 2: Supercrab						     ³
+³ Nivel 0, Rindul 3: Mincau						     ³
+³ Nivel 0, Rindul 4: Flipoblitz 					     ³
+³ Nivel 0, Rindul 5: Caracrantita					     ³
+³ Nivel 1, Rindul 1: Crocomax						     ³
+³ Nivel 1, Rindul 2: Frectici						     ³
+³ Nivel 1, Rindul 3: Balbaila						     ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+EOF
+
+
+
