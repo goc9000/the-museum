@@ -1,0 +1,248 @@
+旼컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴커
+�                        ASTROZAPPERS V1.5 DOCUMENTATION                       �
+읕컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴켸
+WARNING: Before playing the game, you MUST read ALL of this text file or suffer
+         the consequences !
+
+GAME INFO:
+
+This cute lil' game is based on a very old arcade game that probably existed
+since the early days of computing. I've revived it, added more fun, more action,
+more gfx, Soundblaster(TM) sounds, 6 different enemies, 15 levels of pure arcade
+action, FM music and other cool stuff. Enjoy it !
+
+HOW TO PLAY:
+
+The year is 2050 and outer space is literarily filled with thousands of millions
+of space aliens. They're starting to disturb space traffic, so your job is to
+take them out. You'll be battling trough 15 zones of alien infestation, so you
+need a good weapon to succeed. The AstroZappers are humankind's most advanced
+space weapons. An AstroZapper is actually a pair of gravity-linked ships capable
+of generating a 10 GW lightning bolt between them. All you need to do is drive
+these trough the alien-infestated areas and ZAP the aliens while avoiding their
+weapons. However, the space aliens are fierce, so don't think this is too easy.
+You have 3 pairs of ships initially, and you gain one at every 100000 points.
+Good luck and happy zapping !! (By the way, check out the last sections of this
+documentation to see what you will battle in the game !)
+
+CONTROLS:
+
+You can control the ships and select various options with a virtual joystick:
+arrows move, and the spacebar fires. The ships move in a special manner: if you
+press LEFT, the top ship will move to the left and the bottom ship will move to
+the right. If you press RIGHT, the top ship will move to the right and the
+bottom ship will move to the left. After playing a few times, you'll get use to
+this method of controlling the ships. There are also some non-arcade keys you
+can use to control stuff: F1 quits the game, F2 resets the highscore (when in
+title screen), F3 pauses the game, F4 toggles the sounds, and F5 toggles the
+music.
+
+GAME REQUIREMENTS:
+
+The minimum requirements for this game are a PC/compatible computer with a 286
+processor, a VGA graphics card and 350K free conventional memory, but I doubt
+that it will run fine on anything slower than a good 386. Optionally, you can
+use a SoundBlaster(TM)-compatible soundcard to experience sound FX, and/or an
+Adlib(TM)-compatible soundcard for music. If you want sound FX, you must set
+the BLASTER environment variable in the AUTOEXEC.BAT file with the soundcard's
+correct settings. If this variable is not defined or it contains errors, the
+game will assume you have no soundcard for FX. The Adlib(TM) music will work
+independently of this, as long as you have an Adlib(TM)-compatible soundcard
+accessed by the ports $388 and $389. You should set the FX volume a little
+louder than usual, to improve the quality of the sound, while setting the FM
+volume a little bit softer. I would also recommend you play the sound on big
+speakers, beacause they've got lots of bass and ... it just sounds better.
+IMPORTANT: This game was designed on a very fast computer, and has NOT been
+tested on anything else. If the game runs slowly or unevenly on your computer,
+try experimenting with the command-line parameters shown below. Disabling sound
+also seems to help.
+
+COMMAND-LINE PARAMETERS:
+
+The command-line parameters can be entered as follows:
+
+ASTROZAP.EXE /param1 /param2 ... (ect.)
+
+Once you have found the correct parameters for the game, I strongly suggest
+that you put them in a batch file. Enough talk, here they are:
+
+/vgasync - This is reserved for faster computers ONLY. Hipothetically, this
+           will assure PERFECT synchronisation for animation, provided that
+           the computer/VGA are fast enough.
+/fskip=2 - Slower computers will almost certainly need this. Basically, this
+           will multiply all the movement/animation speeds by 2, resulting in
+           a x2 speed increase, but jerkier animation (I find it to be quite
+           acceptable, though).
+/fskip=3 - Same as above, but multiplies everything (including jerkiness) not
+           two, but 3 times.
+/fskip=4 - Multiplies everything 4 times ... I really hope you won't have to
+           resort to this ...
+/slowsync - Causes the game timer to run a little bit slower. Used for fine-tune
+            speed adjustments.
+/nomus - Disables music. F5 will enable it again.
+/nosfx - Disables sound FX. F4 will enable them again.
+/nodet - Disables the soundcard detection. F4 and F5 will NOT re-enable sound
+         and music.
+
+By default, the game will synchronise itself with the system timer. Be sure not
+to have any program that messes with the timer interrupt (IRQ 0) !
+
+RUNNING IT FROM MS-DOS(C)(TM)(ect.):
+
+This is strictly a DOS program and must be run only from there. It is highly
+prefferable that you run it without ANY form of TSR's, including memory managers
+and disk caches. These are of no real use to the program and interfere with it,
+possibly causing slowdowns or crashes.
+
+RUNNING IT FROM WINDOWS(C)(TM)(ect.):
+
+You must NOT run this under Windows(C)(TM)(ect.) or under any other environment
+that modifies the timer interrupt. You are free to try it if you're feeling
+lucky though, or if you can afford to use the /vgasync option.
+
+TROUBLESHOOTING:
+
+When it encounters a loading/initialisation error, the game will usually show
+a descriptive error message in red and halt. However, I didn't have the time
+to put checks on every possible error, and some errors are impossible to check
+due to their special nature. Some errors even crash the program, so here is a
+symptom/cause & solution list that might help you:
+
+Symptom: The program crashes/locks up during loading.
+Causes : 1) Your computer and/or some of its peripherals are REALLY outdated.
+            You really thought this game will run on your 8086 with a CGA ??!
+            Grow up, man !!!
+         2) The BLASTER setting is present and acknowledged, but your soundcard
+            fails to initialise. Fix the settings or start the game with the
+            /nodet parameter to disable sound.
+         3) Some memory allocation screws up, even though the game initially
+            thought it had sufficient memory. Try removing TSR's or freeing up
+            more memory.
+         4) Your soundcard doesn't have FM chips. Sorry, but the only way around
+            this is to completely disable sound (/nodet).
+         5) There's a bug in the program. (Nobody's perfect ...)
+
+Symptom: The program crashes/locks up during playing.
+Causes : 1) Some memory allocation routine failed without reporting it. Try
+            removing TSR's and freeing up more memory.
+         2) The game conflicts with a TSR or device. Reconfigure the system and
+            start the game without TSR's.
+         3) Due to unknown reasons, some soundcards might crash, leaving the
+            program in an infinite loop as it's waiting for the soundcard to
+            respond. The soundcard will be re-enabled with it's initialisation
+            program it came with.
+
+HINT: If the program enters an infinite loop, you might be able to exit to the
+      operating system with a special safety mechanism I've put in the program,
+      BUT you should reboot as soon as possible 'cause you'll be left with very
+      few memory and a weird timer interrupt. Anyway, here goes:
+
+      1) Press 0 on your numeric keypad. If you hear a beep, the system is in
+         an infinite loop. If you don't, the program has destroyed itself and
+         you have no other solution but to reboot.
+      2) Now press 5 on the keypad. You should hear another beep and now you
+         should be able to exit with CTRL+BREAK or CTRL+C. This doesn't always
+         work, but you can try it.
+
+In some cases, the program might give out a "Runtime error ..." message. This
+will appear in case of an error I couldn't put checks on, but does not hang the
+computer. Check out your Borland Pascal(TM) manual to see what it means.
+
+HOW THE GAME WAS MADE:
+
+I made the game in about a week or so. The idea isn't original, but I've never
+seen a PC/arcade machine version of this game in my life. So I wondered how it
+would look like on a PC, and this is what came up. The stuff I put in includes
+6 animated colourful aliens, 4 different alien weapons, lightning-shaped beam,
+explosions(!), debris(!), starfield, shields, sounds, logo, font, bonus... I've
+had lots of fun with it and I hope you'll have too. The game was written in
+Borland Pascal(TM), with some assembly thrown in. If you want the source code,
+forget it. It's so spaghetti-like that it would be bad for your mental sanity
+to read it. The sprites were built using my own sprite editor, which I might
+release some day. (by the way, the aliasing effects were done manually, as the
+automatic aliasing feature in the editor still has some bugs in it ...)
+
+ABOUT THE AUTHOR(S):
+
+D.C.M. Soft is made up of one member at this time: me (D.C.M.). My idea of
+spending my freetime is getting iradiated in front of the computer monitor. I
+like: computers, Sci-Fi, good ol'games, the Commodore'64(TM) and the Z-80,
+classical music, jazz, felines, some cool modern games, freeware, ect. I hate:
+shareware, cardware, lamers, people that design viruses, Windows(C)(TM)(ect.),
+politics, bureaucracy, ect. If you want to contact me, forget it.
+
+CREDITS:
+
+Original game idea: I don't know, but I'll put his name here if I ever find
+                    out who he is (or was).
+PC programming    : D.C.M. Soft
+PC graphics       : D.C.M. Soft
+PC music (yukk!)  : D.C.M. Soft
+PC sound FX       : Various sources
+PC enemies design : D.C.M. Soft
+PC weapons design : D.C.M. Soft
+PC effects design : D.C.M. Soft
+
+GAME ENEMIES: (BONUS SECTION)
+
+Cymbaloid - Pretty stupid and slow, they're mostly harmless. From time to time,
+            they will fire a double photon-blast emanating from their eyes. Be
+            careful, as they can put up quite a fight when they're in groups.
+SpaceWorm - These glowing purple slicky slimers are full of energy ! They're
+            blazingly fast and hard to hit, and they shoot a diagonal double
+            photon-blast at you ! Fortunately, these don't usually gather around
+            in groups, and won't pose a major threat.
+Orbitroid - They're faster than the Cymbaloids, but equal them in intelligence.
+            They only shoot one photon-blast, but their fire rate is higher and
+            they fire in impredictable directions. They are dangerous in groups.
+RotoBlade - When it comes to defending their territory, these guys are fierce !
+            They're pretty fast and unpredictable. To make things worse, every
+            once in a while they shoot MiniRotoLaserBlades in four directions,
+            making it hard to avoid them. They're REALLY dangerous in groups.
+SlimeBlob - They're fast. They're mean. They're unpredictable. And they shoot
+            three blazingly-fast slime bullets in three random directions. Be
+            very careful !
+MinerMech - These will be happy to give you a HAND ... They lay SlimeMines all
+            over the place and the more mines there are, the harder it is to
+            dodge their slimy shrapnel !
+
+CHEATS: (BONUS SECTION)
+
+Because you have little hope of reaching the last level without cheating, here
+we have a cheat code:
+- In the game, press <Enter>, type MEOW, then press <Enter> again. You should
+  have infinite shields for the rest of your game. Please try to finish the
+  game without cheating. I've managed to do that lots of times and I hope you
+  can too.
+
+OTHER GAMES BY D.C.M. SOFT:
+
+- Pac-Man(TM) Forever - A groovy PC version of probably the most known game that
+                        ever existed: Pac-Man(TM). Check it out !
+
+LEGAL CRAP:
+
+"AstroZappers" is (C) 1999 D.C.M. Soft.
+"Pac-Man(TM) forever" is (C) 1999 D.C.M. Soft.
+Pac-Man(TM) is a trademark of whoever trademarked it.
+Borland Pascal(TM) is a trademark of Borland International.
+Borland Pascal is (C) 1983-1992 Borland International.
+Commodore'64(TM) is a trademark of Commodore B. M. Inc.
+MS-DOS(C)(TM)(ect.) is a trademark of Microsoft.
+Windows(C)(TM)(ect.) is a trademark of Microsoft.
+SoundBlaster(TM) is a trademark of Creative Labs Inc.
+Adlib(TM) is a trademark of Adlib Inc.
+
+Any other trademark mentioned in this document is a trademark of its respective
+company, and is used for identification purposes only. If I left somebody out,
+my apologies, as it was purely unintentional.
+
+D.C.M. Soft holds absolutely no responsability over the effects of using,
+misusing, or not-being-able-to-use the program. This program is used on your
+own risk!
+
+This program is 100 percent freeware. You can distribute it freely, provided
+that you don't modify it, in which case your computer will EXPLODE into zillions
+of pieces of flaming debris.
+
+END OF TEXT !

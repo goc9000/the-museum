@@ -1,0 +1,131 @@
+Astrozappers
+============
+
+Timeline
+--------
+
+The file dates suggest development occured from March to July 1999, with some
+final tweaks in October 1999.
+
+Description
+-----------
+
+Astrozappers is a PC version of the Atari 2600 game Cross Force. You control
+a pair of ships linked by a common center of gravity, such that if one ship
+moves left or right, the other will move in the opposite direction. Meanwhile,
+aliens stroll across the screen and you have to kill them all by lining up your
+ships carefully, then pressing Space so as to generate a deadly lightning bolt
+between them, destroying any aliens caught in between. You get bonus points for
+more than 2 aliens destroyed simultaneously. The aliens also shoot at you and
+you have to dodge their shots, as a hit on any of your two ships will deplete
+the common shield pool, killing you if it reaches zero. As you progress through
+the levels, more alien species appear and they become more aggressive and hard
+to hit.
+
+Don't ask me how a lightning bolt could possibly be generated in space. This is
+not even the most ludicrous premise of the game, but as Garak would say, "Let
+us not dwell on such minutiae"...
+
+I'm pretty pleased with how this game turned out (as long as I don't look at the
+code). It featured a pretty decent game idea which I've decorated with some nice
+graphical touches, sound effects and music. Some nice touches I'm particularly
+proud of are:
+
+- You have 6 different enemy species (enemy variety has always been a major
+  theme in my games), each with its unique movement and firing pattern.
+- The enemies gib comically when killed, a mechanic likely borrowed from Duke
+  Nukem 3D, which I was playing heavily at the time.
+- The SpaceWorm flickers and glows like a neon, and the glowing/flickering is
+  even present in its gibs. Its high-energy nature is also suggested by a pulse
+  of blue light travelling over the worm's length just before it fires.
+- A generally awful, but nevertheless original musical track that features that
+  drum beat I always used to love in Future Crew demos. It's probably one of my
+  only complete compositions to date.
+
+The one thing I don't like that much is that the game kind of drags for the
+first few levels, when the aliens are slow and barely put up a fight. It can get
+pretty chaotic from level 8 on, though, as the aliens' multiple firing modes
+start to combine into a night-unescapable bullet fest...
+
+Astrozappers was my first game that I could deem as finished and almost passable
+as a product. One may also note my abandonment of the Romanian language in the
+game, documentation and sources from this point on. I guess the writing was on
+the wall that if I ever wanted to become a commercial game developer, I better
+start thinking and writing in the language nearly everyone speaks worldwide.
+
+If you want to try out the application quickly, there's a precompiled version
+in the 'COMPILED' directory with all the auxiliary files (documentation etc.)
+that would be present in the final installation package.
+
+Compilation
+-----------
+
+First compile ASTROZAP.EXE using all the files in the SOURCES directory, then
+move it to the POSTCOMP directory. Run POSTCOMP.BAT then move the processed
+ASTROZAP.EXE to the COMPILED directory.
+
+Go to the RESOURCE/SPRITES directory and run COMPILE.BAT there. Move the
+generated ASTROZAP.IDX to COMPILED, and ASTROZAP.GFX to POSTCOMP. Also copy
+RESOURCE/DOC/ASTROZAP.TXT to POSTCOMP and RESOURCE/ASTROZAP.PAL to COMPILED.
+
+Move to RESOURCE/MUSIC and run ENCO.BAT there. Move ASTROZAP.MUS to the
+COMPILED directory. Now move to RESOURCE/SOUNDS and run (outside of DosBOX) the
+`compile_sounds.sh` script, which uses `sox` to produce ASTROZAP.SFX. Move this
+to the COMPILED directory as well.
+
+Finally, move to POSTCOMP and run MAKECHK.EXE. Now you can move ASTROZAP.GFX,
+ASTROZAP.TXT and ASTROZAP.CHK to the COMPILED directory, and the runtime package
+should be complete.
+
+You may wonder why I didn't make a .BAT for all this. The reason is I'm lazy,
+and it includes steps (such as compiling the sounds) that can't easily be run
+from within the DosBox environment.
+
+Technical Notes
+---------------
+
+The code is atrociously bad and showcases my inability at the time to properly
+make use of factoring and arrays. Nevertheless, one can see an improvement in
+modularization, as well as my ability of patching and repurposing library code,
+e.g. modifying line drawing code to also do collision detection.
+
+Astrozappers marks the first use of Adlib music in my games. Although I was to
+develop FM Tracker to assist in composing .FMM format tracks, for Astrozappers
+I distinctly remember composing this 'manually' in a text editor. This was also
+the first time I combined the sound effects for the game into a single file,
+although this basically just meant appending them into a single .VOC file and
+changing the header to something unrecognizable. Note how I had not discovered
+mixing, therefore only one sound can play at a time.
+
+Finally, one may note the mysterious JURY_RIG unit. What I was trying to do here
+is obfuscate the copyright message displayed on the title screen so that someone
+opening up the game in a hex editor could not alter it maliciously. I'll leave
+it to you to think on whether that's the proper way to do it...
+
+Notes on the Sounds
+-------------------
+
+The original version of this game used sounds 'borrowed' from various games or
+online sources I had access to at that time. This was not a problem back then,
+as the games were made for for my personal use only. Now that I am publishing
+this content, be it historical in nature, I have decided to replace the sounds
+with free alternatives from the FreeSound website, so as to avoid any legal
+trouble. The attribution info for these free sounds follows (note that most of
+them have been further remixed and processed for use in the game):
+
+BLAD.VOC: #131145 'rocket-explosed' by julien-nicolas
+BOOM.VOC: #80500 'exp-obj-large03' by ggctuk
+MINE.VOC: #75826 'metal-door' by analog-bleep-ten
+PROT.VOC: #136702 'laser-zap' by hoscalegeek
+SHLD.VOC: #177242 'cinematic-impact' by northern-monkey +
+          #98883 'powerup' by noirenex
+SLIM.VOC: #41530 'slimeatk' by jamius +
+          #104042 'blood-hits-1' by willhiccups +
+          #47340 'filth-squash' by gelo-papas
+ZAPS.VOC: #19487 'jacobsladdersingle2' by halleck
+
+One may notice that the sounds are unusually short, rarely exceeding 0.8
+seconds in length. This is because my programs at the time used a small memory
+model which meant that all data had to fit in 64K (!). This also explains why
+the sounds are all resampled at 11KHz.
+
